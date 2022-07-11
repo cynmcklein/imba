@@ -17,7 +17,6 @@ Hi, this is the few steps to run the project via Xampp!
 © Copyright Big Apple Packaging Incorporated. All Rights Reserved
 https://www.facebook.com/BigApple-Plastic-Packaging-Inc-107830804444889
 
-#Pereyra, Cyan Mcklein P.
-
-Developer
+# Pereyra, Cyan Mcklein P.
+# Developer
 09099292908
