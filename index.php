@@ -5,26 +5,25 @@ require_once('includes/load.php');
 
 
 // // // require_once 'conndb.php';
-if (isset($_POST['login'])) {
+// if (isset($_POST['login'])) {
 
-    $username = $_POST['username'];
+//     $username = $_POST['username'];
 
 
-    $sql = "SELECT group_name FROM users WHERE username = '$username'";
-    $user = $data->query($sql) or die($data->error);
-    $row = $user->fetch_assoc();
-    $total = $user->num_rows;
+//     $sql = "SELECT group_name FROM users WHERE username = '$username'";
+//     $user = $data->query($sql) or die($data->error);
+//     $row = $user->fetch_assoc();
+//     $total = $user->num_rows;
 
-    if ($row["group_name"] == "Production") {
+//     if ($row["group_name"] == "Production") {
 
-        header("location:home.php");
-    } elseif ($row["group_name"] == "Admin") {
-        header("location:home.php");
-    } else {
-        die("invalid input");
-        header("location:index.php");
-    }
-}
+//         header("location:home.php");
+//     } elseif ($row["group_name"] == "Admin") {
+//         header("location:home.php");
+//     } else {
+//         die("invalid input");
+//     }
+// }
 
 
 //if ($_SERVER["REQUEST_METHOD"] == "POST") {

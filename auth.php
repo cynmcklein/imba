@@ -26,7 +26,7 @@ if (empty($errors)) {
 
             header("location:production.php");
         } elseif ($row["group_name"] == "Admin") {
-            header("location:index.php");
+            header("location:home.php");
         } else {
             die("invalid input");
         }
@@ -48,11 +48,11 @@ if (empty($errors)) {
     // endif;
     else {
         $session->msg("d", "Sorry Username/Password incorrect.");
-        redirect('index1.php', false);
+        redirect('index.php', false);
     }
 } else {
     $session->msg("d", $errors);
-    redirect('index1.php', false);
+    redirect('index.php', false);
 }
 
 ?>
