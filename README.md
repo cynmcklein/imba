@@ -1,4 +1,4 @@
-BigApple Inc: Inventory Management System
+# BigApple Inc: Inventory Management System
 
 Hi, this is the few steps to run the project via Xampp!
 
