@@ -3,27 +3,38 @@
 <main id="main" class="main">
   <h1>Product Details</h1>
 
-  <form class="row g-3">
+  <?php require_once 'orders-new-order-form-process.php'; ?>
+  <form action="orders-new-order-form-process.php" method="POST" class="row g-3">
     <div class="col-md-12">
       <label for="inputName5" class="form-label">Product Name</label>
-      <input type="text" class="form-control" id="inputName5">
+      <input type="text" class="form-control" name="prodname" id="prodname">
     </div>
 
     <div class="col-md-4">
       <label for="inputState" class="form-label">Plastic Type</label>
-      <select id="inputState" class="form-select">
+      <select id="plastictype" name="plastictype" class="form-select">
         <option selected>Choose...</option>
-        <option>...</option>
+        <option>Pelletized PE</option>
+        <option>Pelletized HD</option>
+        <option>LDPE</option>
+        <option>LLDPE</option>
+        <option>HDPE</option>
+        <option>PP</option>
       </select>
     </div>
 
     <div class="col-md-4">
       <label for="inputAddress5" class="form-label">Number of Colors</label>
-      <input type="number" class="form-control" id="inputAddres5s" placeholder="">
+      <input type="number" class="form-control" name="numcolors" id="numcolors" placeholder="">
     </div>
     <div class="col-md-4">
       <label for="inputAddress2" class="form-label">Quantity</label>
-      <input type="number" class="form-control" id="inputAddress2" placeholder="">
+      <input type="number" class="form-control" name="qty" id="qty" placeholder="">
+    </div>
+
+    <div class="col-md-4">
+      <label for="inputAddress2" class="form-label">Customer ID</label>
+      <input type="number" class="form-control" name="custid" id="custid" readonly>
     </div>
 
     <div class="text-center">
