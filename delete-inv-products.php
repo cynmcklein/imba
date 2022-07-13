@@ -20,3 +20,6 @@ header("Location: inventory-products.php");
 ?>
 
 <!-- DELETE FROM `customer` WHERE `customer`.`id` = 64 -->
+<!-- DELETE FROM `customer` WHERE `customer`.`id` = 64 -->
+<!-- DELETE FROM `customer` WHERE `customer`.`id` = 64 -->
+<!-- DELETE FROM `customer` WHERE `customer`.`id` = 64 -->
