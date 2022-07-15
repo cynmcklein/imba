@@ -29,18 +29,19 @@ $Write="<?php $" . "UIDresult=''; " . "echo $" . "UIDresult;" . " ?>";
                     <div class="col-md-12">
                          <label for="inputName5" class="form-label">UID</label>
                          <div class="col-md-12">
-							<textarea name="id" id="getUID" placeholder="Please Scan your Card / Key Chain to display ID" rows="1" cols="1" required></textarea>
+                         <a href="UIDContainer.php">Matias</a>
+							<!-- <textarea name="id" id="getUID" placeholder="Please Scan your Card / Key Chain to display ID" required></textarea> -->
 						 </div>
                     </div>
 					
 					<div class="col-md-12">
                          <label for="inputName5" class="form-label">Code</label>
-                         <input type="text" name="code" class="form-control" id="companyName">
+                         <input type="text" name="code" class="form-control" id="getUID">
                     </div>
 					
 					<div class="col-md-12">
                          <label for="inputName5" class="form-label">Item Name</label>
-                         <input type="text" name="name" class="form-control" id="companyName">
+                         <input type="text" name="name" class="form-control" id="getUID">
                     </div>
 					
 					<div class="row mb-3">
@@ -61,7 +62,7 @@ $Write="<?php $" . "UIDresult=''; " . "echo $" . "UIDresult;" . " ?>";
 					
 					<div class="col-md-12">
                          <label for="inputName5" class="form-label">Supplier Name</label>
-                         <input type="text" name="suppliername" class="form-control" id="companyName">
+                         <input type="text" name="suppliername" class="form-control" id="getUID">
                     </div>
 					
 					<div class="form-actions">
