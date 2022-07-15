@@ -533,23 +533,7 @@ $user = current_user(); ?>
 
                 <!-- End Forms Nav -->
 
-                <li class="nav-item">
-                    <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
-                        <i class="bi bi-layout-text-window-reverse"></i><span>Delivery</span><i class="bi bi-chevron-down ms-auto"></i>
-                    </a>
-                    <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-                        <li>
-                            <a href="delivery-customers.php">
-                                <i class="bi bi-circle"></i><span>Customer</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="delivery-supplier.php">
-                                <i class="bi bi-circle"></i><span>Supplier</span>
-                            </a>
-                        </li>
-                    </ul>
-                </li><!-- End Tables Nav -->
+
 
                 <!-- End Charts Nav -->
 
