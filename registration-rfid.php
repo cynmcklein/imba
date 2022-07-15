@@ -1,79 +1,85 @@
 <?php require_once 'header-sidebar.php';
 require_once 'includes/load.php';
 //session_start()
-$Write="<?php $" . "UIDresult=''; " . "echo $" . "UIDresult;" . " ?>";
-	file_put_contents('UIDContainer.php',$Write);
+
 ?>
 
 <html>
-    <head>
-        <script>
-			$(document).ready(function(){
-				 $("#getUID").load("UIDContainer.php");
-				setInterval(function() {
-					$("#getUID").load("UIDContainer.php");
-				}, 500);
-			});
-		</script>
-        
-    </head>
+
+<head>
+  <!-- <script>
+    $(document).ready(function() {
+      $("#getUID").load("UIDContainer.php");
+      setInterval(function() {
+        $("#getUID").load("UIDContainer.php");
+      }, 500);
+    });
+  </script> -->
+
+</head>
+
 <body>
-            <div class="card-body">
-			<br>
-			<div class="center" style="margin: 0 auto; width:495px; border-style: solid; border-color: #f2f2f2;">
-				<div class="card-title">
-					<h3 align="center">Registration Form</h3>
-				</div>
-				<br>
-				<form action="insertDB.php" method="post" >
-                    <div class="col-md-12">
-                         <label for="inputName5" class="form-label">UID</label>
-                         <div class="col-md-12">
-                         <a href="UIDContainer.php">Matias</a>
-							<!-- <textarea name="id" id="getUID" placeholder="Please Scan your Card / Key Chain to display ID" required></textarea> -->
-						 </div>
-                    </div>
-					
-					<div class="col-md-12">
-                         <label for="inputName5" class="form-label">Code</label>
-                         <input type="text" name="code" class="form-control" id="getUID">
-                    </div>
-					
-					<div class="col-md-12">
-                         <label for="inputName5" class="form-label">Item Name</label>
-                         <input type="text" name="name" class="form-control" id="getUID">
-                    </div>
-					
-					<div class="row mb-3">
-                    <label class="col-sm-2 col-form-label">Material Type</label>
-                    <div class="col-sm-10">
-                        <select class="form-select" name="itemtype" aria-label="Default select example">
-                        <option selected>Open this select menu</option>
-                        <option>Big Apple</option>
-                        <option>Pelletized PE</option>
-                        <option>Pelletized HD</option>
-                        <option>LDPE</option>
-                        <option>LLDPE</option>
-                        <option>HDPE</option>
-                        <option>PP</option>
-                        </select>
-                    </div>
-                    </div>
-					
-					<div class="col-md-12">
-                         <label for="inputName5" class="form-label">Supplier Name</label>
-                         <input type="text" name="suppliername" class="form-control" id="getUID">
-                    </div>
-					
-					<div class="form-actions">
-						<button type="submit" class="btn btn-success">Save</button>
-                    </div>
-				</form>
-				
-			</div>               
-		</div> <!-- /container -->	
-        
-        <div class="col-12">
+  <div class="card-body">
+    <br>
+    <div class="center" style="margin: 0 auto; width:495px; border-style: solid; border-color: #f2f2f2;">
+      <div class="card-title">
+        <h3 align="center">Registration Form</h3>
+      </div>
+      <br>
+      <form action="insertDB.php" method="post">
+
+        <div class="col-md-12">
+          <label for="inputName5" class="form-label">UID</label>
+          <div class="col-md-12">
+            <div class="col-sm-10">
+              
+              <input type="text" name="id" class="form-control" id="itemname" value="<?php require_once 'UIDContainer.php';
+              ?>"></input>
+              <?php ?>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12">
+          <label for="inputName5" class="form-label">Code</label>
+          <input type="text" name="code" class="form-control" id="companyName">
+        </div>
+
+        <div class="col-md-12">
+          <label for="inputName5" class="form-label">Item Name</label>
+          <input type="text" name="item_name" class="form-control" id="companyName">
+        </div>
+
+        <div class="row mb-3">
+          <label class="col-sm-2 col-form-label">Material Type</label>
+          <div class="col-sm-10">
+            <select class="form-select" name="item_type" aria-label="Default select example">
+              <option selected>Open this select menu</option>
+              <option>Big Apple</option>
+              <option>Pelletized PE</option>
+              <option>Pelletized HD</option>
+              <option>LDPE</option>
+              <option>LLDPE</option>
+              <option>HDPE</option>
+              <option>PP</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="col-md-12">
+          <label for="inputName5" class="form-label">Supplier Name</label>
+          <input type="text" name="supplier_name" class="form-control" id="companyName">
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-success">Save</button>
+        </div>
+      </form>
+
+    </div>
+  </div> <!-- /container -->
+
+  <div class="col-12">
     <div class="card recent-sales">
 
 

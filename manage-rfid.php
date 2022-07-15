@@ -6,83 +6,10 @@ require_once 'includes/load.php';
 
 <main id="main" class="main">
 
-  <h1>RFID Registration</h1>
+  <h1>Manage RFID</h1>
   <div class="col-md-12">
     <?php echo display_msg($msg); ?>
   </div>
-
-
-
-
-  <div class="modal fade" id="largeModal" tabindex="-1">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h3 class="modal-title">Add New Customer</h3>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-
-        <?php require_once 'process.php';
-        ?>
-        <form class="row g-3" action="process.php" method="POST">
-          <div class="modal-body">
-            <div class="col-md-12">
-              <label for="inputName5" class="form-label">Company Name </label>
-              <input type="text" name="companyName" class="form-control" id="companyName">
-            </div>
-            <div class="col-md-6">
-              <label for="inputEmail5" class="form-label">Email </label>
-              <input type="email" name="email" class="form-control" id="email">
-            </div>
-            <div class="col-md-6">
-              <label for="inputPassword5" class="form-label">Contact Number </label>
-              <input type="integer" name="contact" class="form-control" id="contact">
-            </div>
-            <div class="col-12">
-              <label for="inputAddress5" class="form-label">Contact Person </label>
-              <input type="text" name="conPerson" class="form-control" id="conPerson">
-            </div>
-            <div class="col-12">
-              <label for="inputAddress2" class="form-label">Address </label>
-              <input type="text" name="address" class="form-control" id="address" placeholder="Apartment, studio, or floor">
-            </div>
-            <div class="col-12">
-              <label for="inputAddress2" class="form-label">Agent Name </label>
-              <input type="text" name="agent" class="form-control" id="address" placeholder="">
-            </div>
-
-
-
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="submit" name="save" class="btn btn-primary" data-bs-target="#basicmodal">Save changes</button>
-            </div>
-
-
-
-        </form>
-
-
-
-
-      </div>
-
-    </div>
-  </div>
-
-
-  </div>
-
-
-
-
-  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#largeModal">
-      Add New Customer
-    </button>
-  </div>
-
-
 
   <div class="col-12">
     <div class="card recent-sales">
@@ -112,12 +39,11 @@ require_once 'includes/load.php';
           <thead>
             <tr>
 
-              <th scope="col">Company Name</th>
-              <th scope="col">Email</th>
-              <th scope="col">Contact</th>
-              <th scope="col">Contact Person</th>
-              <th scope="col">Address</th>
-              <th scope="col">Agent</th>
+              <th scope="col">UID</th>
+              <th scope="col">Code</th>
+              <th scope="col">Item Name</th>
+              <th scope="col">Material Type</th>
+              <th scope="col">Supplier Name</th>
 
             </tr>
 
@@ -127,19 +53,18 @@ require_once 'includes/load.php';
 
             require_once 'conndb.php';
 
-            $query = mysqli_query($data, "SELECT * FROM customer");
+            $query = mysqli_query($data, "SELECT * FROM rfiddb");
             while ($row = mysqli_fetch_array($query)) {
 
 
             ?>
               <tr>
 
-                <td><?php echo $row['company']; ?></td>
-                <td><?php echo $row['email']; ?></td>
-                <td><?php echo $row['contact']; ?></td>
-                <td><?php echo $row['conperson']; ?></td>
-                <td><?php echo $row['address']; ?></td>
-                <td><?php echo $row['agent_name']; ?></td>
+                <td><?php echo $row['id']; ?></td>
+                <td><?php echo $row['code']; ?></td>
+                <td><?php echo $row['item_name']; ?></td>
+                <td><?php echo $row['item_type']; ?></td>
+                <td><?php echo $row['supplier_name']; ?></td>
                 <td>
                   <!-- Call to action buttons -->
 
