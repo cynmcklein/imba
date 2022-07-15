@@ -3,6 +3,7 @@
 <main id="main" class="main">
   <div class="card">
     <div class="card-body">
+      <h2>Order New Product</h2>
       <h5 class="card-title">Customer Information</h5>
 
       <!-- Multi Columns Form -->
@@ -10,23 +11,23 @@
       <form class="row g-3" action="process.php" method="POST">
         <div class="col-md-12">
           <label for="inputName5" class="form-label">Company Name </label>
-          <input type="text" name="companyName" class="form-control" id="companyName">
+          <input type="text" name="companyName" class="form-control" id="companyName" required>
         </div>
         <div class="col-md-6">
           <label for="inputEmail5" class="form-label">Email </label>
-          <input type="email" name="email" class="form-control" id="email">
+          <input type="email" name="email" class="form-control" id="email" required>
         </div>
         <div class="col-md-6">
           <label for="inputPassword5" class="form-label">Contact Number </label>
-          <input type="integer" name="contact" class="form-control" id="contact">
+          <input type="integer" name="contact" class="form-control" id="contact" required>
         </div>
         <div class="col-12">
           <label for="inputAddress5" class="form-label">Contact Person </label>
-          <input type="text" name="conPerson" class="form-control" id="conPerson">
+          <input type="text" name="conPerson" class="form-control" id="conPerson" required>
         </div>
         <div class="col-12">
           <label for="inputAddress2" class="form-label">Address </label>
-          <input type="text" name="address" class="form-control" id="address" placeholder="Apartment, studio, or floor">
+          <input type="text" name="address" class="form-control" id="address" placeholder="Apartment, studio, or floor" required>
         </div>
 
     </div>
@@ -47,7 +48,7 @@
 
 
       <button type="submit" class="btn btn-primary" name="saveorder" data-bs-toggle="modal" data-bs-target="#basicModal">
-        Submit
+        Next
       </button>
 
 
