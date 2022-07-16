@@ -19,9 +19,12 @@ require_once 'includes/load.php';
 </head>
 
 <body>
-  <div class="card-body">
+<main id="main" class="main">
+<div class="col-12">
+    <div class="card recent-sales">
+    <div class="card-body">
     <br>
-    <div class="center" style="margin: 0 auto; width:495px; border-style: solid; border-color: #f2f2f2;">
+    <div class="center" >
       <div class="card-title">
         <h3 align="center">Registration Form</h3>
       </div>
@@ -31,7 +34,7 @@ require_once 'includes/load.php';
         <div class="col-md-12">
           <label for="inputName5" class="form-label">UID</label>
           <div class="col-md-12">
-            <div class="col-sm-10">
+            <div class="col-sm-12">
               
               <input type="text" name="id" class="form-control" id="itemname" value="<?php require_once 'UIDContainer.php';
               ?>"></input>
@@ -78,87 +81,10 @@ require_once 'includes/load.php';
 
     </div>
   </div> <!-- /container -->
-
-  <div class="col-12">
-    <div class="card recent-sales">
-
-
-      <div class="filter">
-        <a class="icon" href="#" data-bs-toggle="dropdown"><i></i></a>
-        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-          <li class="dropdown-header text-start">
-            <h6>Filter</h6>
-          </li>
-
-
-
-          <li><a class="dropdown-item" href="#">Today</a></li>
-          <li><a class="dropdown-item" href="#">This Month</a></li>
-          <li><a class="dropdown-item" href="#">This Year</a></li>
-        </ul>
-      </div>
-
-
-      <div class="card-body">
-        <h5 class="card-title">Customer Overview <span>| Today</span></h5>
-
-        <table class="table table-borderless datatable">
-
-          <thead>
-            <tr>
-
-              <th scope="col">Company Name</th>
-              <th scope="col">Email</th>
-              <th scope="col">Contact</th>
-              <th scope="col">Contact Person</th>
-              <th scope="col">Address</th>
-              <th scope="col">Agent</th>
-
-            </tr>
-
-          </thead>
-          <tbody>
-            <?php
-
-            require_once 'conndb.php';
-
-            $query = mysqli_query($data, "SELECT * FROM customer");
-            while ($row = mysqli_fetch_array($query)) {
-
-
-            ?>
-              <tr>
-
-                <td><?php echo $row['company']; ?></td>
-                <td><?php echo $row['email']; ?></td>
-                <td><?php echo $row['contact']; ?></td>
-                <td><?php echo $row['conperson']; ?></td>
-                <td><?php echo $row['address']; ?></td>
-                <td><?php echo $row['agent_name']; ?></td>
-                <td>
-                  <!-- Call to action buttons -->
-
-
-
-                  <a href="edit-customer.php?edit=<?php echo $row['id']; ?>"><button class="btn btn-success ri-contacts-fill" type="button" data-toggle="tooltip" data-placement="top" title="Edit"></button></a>
-                  <a href='process-delete.php?delete=<?php echo $row['id']; ?>'><button class="btn btn-danger ri-delete-bin-6-line" name="btnDelete" type="button" data-toggle="tooltip" data-placement="top" title="Delete"></button></a>
-
-
-
-                </td>
-
-              </tr>
-            <?php }
-            mysqli_close($data) ?>
-
-
-          </tbody>
-        </table>
-
-      </div>
-
-    </div>
   </div>
+  </div>
+  </main>
+  
 
 </body>
 </hmtl>
