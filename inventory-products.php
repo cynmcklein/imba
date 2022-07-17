@@ -43,7 +43,7 @@ require_once 'includes/load.php'; ?>
               <h5 class="card-title">Products</h5>
 
               <!-- Table with hoverable rows -->
-              <table class="table table-hover">
+              <table class="table table-borderless datatable">
                 <thead>
                   <tr>
                     <th scope="col">Code</th>

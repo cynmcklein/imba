@@ -17,9 +17,7 @@ include_once 'header-sidebar.php';
     <h1>Dashboard</h1>
     <nav>
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-
-        <li class="breadcrumb-item active">Dashboard</li>
+        <li class="breadcrumb-item"><a href="home.php">Home</a></li>
 
       </ol>
     </nav>
@@ -33,6 +31,8 @@ include_once 'header-sidebar.php';
       <!-- Left side columns -->
       <div class="col-lg-8">
         <div class="row">
+
+
 
           <!-- Sales Card --
             <div class="col-xxl-4 col-md-6">
@@ -109,24 +109,10 @@ include_once 'header-sidebar.php';
 
             <div class="card info-card customers-card">
 
-              <div class="filter">
-                <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                  <li class="dropdown-header text-start">
-                    <h6>Filter</h6>
-                  </li>
 
-                  <li><a class="dropdown-item" href="#">Today</a></li>
-                  <li><a class="dropdown-item" href="#">This Month</a></li>
-                  <li><a class="dropdown-item" href="#">This Year</a></li>
-                </ul>
-              </div>
 
               <div class="card-body">
                 <h5 class="card-title">Products <span>| Update</span></h5>
-
-
-
 
 
                 <div class="d-flex align-items-center">
@@ -145,12 +131,20 @@ include_once 'header-sidebar.php';
 
                       if ($products_total = mysqli_num_rows($query_products_run)) {
                         echo $products_total;
-                      } else {
-                        echo '<h4 class="mb-0">No Data</h4>';
                       }
+
+
                       ?>
                     </h6>
-                    <span class="text-danger small pt-1 fw-bold">19%</span> <span class="text-muted small pt-2 ps-1">decrease</span>
+                    <?php
+                    if ($products_total <= 10) {
+                      echo '<span class="text-danger small pt-1 fw-bold">Critical</span> <span class="text-muted small pt-2 ps-1">Low Stock</span>';
+                    } else {
+                      echo '<span class="text-success small pt-1 fw-bold">Normal</span> <span class="text-muted small pt-2 ps-1">Stock</span>';
+                    }
+
+                    ?>
+                    <!-- <span class="text-danger small pt-1 fw-bold">19%</span> <span class="text-muted small pt-2 ps-1">decrease</span> -->
 
                   </div>
                 </div>
@@ -165,18 +159,6 @@ include_once 'header-sidebar.php';
 
             <div class="card info-card customers-card">
 
-              <div class="filter">
-                <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                  <li class="dropdown-header text-start">
-                    <h6>Filter</h6>
-                  </li>
-
-                  <li><a class="dropdown-item" href="#">Today</a></li>
-                  <li><a class="dropdown-item" href="#">This Month</a></li>
-                  <li><a class="dropdown-item" href="#">This Year</a></li>
-                </ul>
-              </div>
 
               <div class="card-body">
                 <h5 class="card-title">Raw Materials <span>| Update</span></h5>
@@ -197,14 +179,18 @@ include_once 'header-sidebar.php';
 
                       if ($products_total = mysqli_num_rows($query_products_run)) {
                         echo $products_total;
-                      } else {
-                        echo '<h4 class="mb-0">No Data</h4>';
                       }
                       ?>
 
 
                     </h6>
-                    <span class="text-success small pt-1 fw-bold">15%</span> <span class="text-muted small pt-2 ps-1">Increase</span>
+                    <?php
+                    if ($products_total <= 10) {
+                      echo '<span class="text-danger small pt-1 fw-bold">Critical</span> <span class="text-muted small pt-2 ps-1">Low Stock</span>';
+                    } else {
+                      echo '<span class="text-success small pt-1 fw-bold">Normal</span> <span class="text-muted small pt-2 ps-1">Stock</span>';
+                    }
+                    ?>
 
                   </div>
                 </div>
@@ -219,18 +205,7 @@ include_once 'header-sidebar.php';
 
             <div class="card info-card customers-card">
 
-              <div class="filter">
-                <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                  <li class="dropdown-header text-start">
-                    <h6>Filter</h6>
-                  </li>
 
-                  <li><a class="dropdown-item" href="#">Today</a></li>
-                  <li><a class="dropdown-item" href="#">This Month</a></li>
-                  <li><a class="dropdown-item" href="#">This Year</a></li>
-                </ul>
-              </div>
 
               <div class="card-body">
                 <h5 class="card-title">Components <span>| Update</span></h5>
@@ -251,16 +226,19 @@ include_once 'header-sidebar.php';
 
                       if ($products_total = mysqli_num_rows($query_products_run)) {
                         echo $products_total;
-                      } else {
-                        echo '<h4 class="mb-0">No Data</h4>';
                       }
                       ?>
 
 
 
                     </h6>
-                    <span class="text-danger small pt-1 fw-bold">19%</span> <span class="text-muted small pt-2 ps-1">decrease</span>
-
+                    <?php
+                    if ($products_total <= 10) {
+                      echo '<span class="text-danger small pt-1 fw-bold">Critical</span> <span class="text-muted small pt-2 ps-1">Low Stock</span>';
+                    } else {
+                      echo '<span class="text-success small pt-1 fw-bold">Normal</span> <span class="text-muted small pt-2 ps-1">Stock</span>';
+                    }
+                    ?>
                   </div>
                 </div>
 
@@ -351,9 +329,113 @@ include_once 'header-sidebar.php';
               </div>
             </div><!- End Reports -->
 
+          <?php
+
+          //Bigapple
+          include_once 'conndb.php';
+
+          //Pellet PE
+          $sql = "SELECT itemtype from rawmaterials WHERE itemtype = 'Pelletized PE'";
+          $query_pe_run = mysqli_query($data, $sql);
+
+
+          if ($pe_total = mysqli_num_rows($query_pe_run)) {
+            //echo $pe_total;
+          }
+          //pellet HD
+          $sql = "SELECT itemtype from rawmaterials WHERE itemtype = 'Pelletized HD'";
+          $query_hd_run = mysqli_query($data, $sql);
+
+
+          if ($hd_total = mysqli_num_rows($query_hd_run)) {
+            // echo $hd_total;
+          }
+          //LDPE
+          $sql = "SELECT itemtype from rawmaterials WHERE itemtype = 'LDPE'";
+          $query_ldpe_run = mysqli_query($data, $sql);
+
+
+          if ($ldpe_total = mysqli_num_rows($query_ldpe_run)) {
+            // echo $ldpe_total;
+          }
+          //LLDPE
+          $sql = "SELECT itemtype from rawmaterials WHERE itemtype = 'LLDPE'";
+          $query_lldpe_run = mysqli_query($data, $sql);
+
+
+          if ($lldpe_total = mysqli_num_rows($query_lldpe_run)) {
+            //echo $lldpe_total;
+          }
+          //HDPE
+          $sql = "SELECT itemtype from rawmaterials WHERE itemtype = 'HDPE'";
+          $query_hdpe_run = mysqli_query($data, $sql);
+
+
+          if ($hdpe_total = mysqli_num_rows($query_hdpe_run)) {
+            //echo $hdpe_total;
+          }
+          //PP
+          $sql = "SELECT itemtype from rawmaterials WHERE itemtype = 'PP'";
+          $query_pp_run = mysqli_query($data, $sql);
+
+
+          if ($pp_total = mysqli_num_rows($query_pp_run)) {
+            // echo $pp_total;
+          }
+
+          ?>
+
           <!-- Recent Sales -->
           <div class="col-12">
             <div class="card recent-sales">
+
+              <div class="col-lg-12">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Material Type</h5>
+
+                    <!-- Bar Chart -->
+                    <div id="barChart"></div>
+
+                    <script>
+                      document.addEventListener("DOMContentLoaded", () => {
+                        new ApexCharts(document.querySelector("#barChart"), {
+                          series: [{
+                            data: [
+                              <?php echo $pe_total; ?>,
+                              <?php echo $hd_total; ?>,
+                              <?php echo $ldpe_total; ?>,
+                              <?php echo $lldpe_total; ?>,
+                              <?php echo $hdpe_total; ?>,
+                              <?php echo $pp_total; ?>,
+
+
+                            ]
+                          }],
+                          chart: {
+                            type: 'bar',
+                            height: 400
+                          },
+                          plotOptions: {
+                            bar: {
+                              borderRadius: 4,
+                              horizontal: true,
+                            }
+                          },
+                          dataLabels: {
+                            enabled: false
+                          },
+                          xaxis: {
+                            categories: ['Pelletized PE', 'Pelletized HD', 'LDPE', 'LLDPE', 'HDPE', 'PP'],
+                          }
+                        }).render();
+                      });
+                    </script>
+                    <!-- End Bar Chart -->
+
+                  </div>
+                </div>
+              </div>
 
               <div class="filter">
                 <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
@@ -513,61 +595,191 @@ include_once 'header-sidebar.php';
               <li><a class="dropdown-item" href="#">This Year</a></li>
             </ul>
           </div>
+          <!-- notif connection -->
+
+
+          <!-- notif connection ends -->
 
           <div class="card-body">
-            <h5 class="card-title">Recent Activity <span>| Today</span></h5>
+            <h5 class="card-title">Notifications <span>| Today</span></h5>
 
-            <div class="activity">
+            <?php
 
-              <div class="activity-item d-flex">
-                <div class="activite-label">32 min</div>
-                <i class='bi bi-circle-fill activity-badge text-success align-self-start'></i>
-                <div class="activity-content">
-                  Wrapper <a href="#" class="fw-bold text-dark">restocked</a> 500pcs
-                </div>
-              </div><!-- End activity item-->
 
-              <div class="activity-item d-flex">
-                <div class="activite-label">56 min</div>
-                <i class='bi bi-circle-fill activity-badge text-danger align-self-start'></i>
-                <div class="activity-content">
-                  Ericson Scanned 45 items
-                </div>
-              </div><!-- End activity item-->
+            include_once 'conndb.php';
+            $sql = "SELECT * from rawmaterials";
+            $query_products_run = mysqli_query($data, $sql);
 
-              <div class="activity-item d-flex">
-                <div class="activite-label">2 hrs</div>
-                <i class='bi bi-circle-fill activity-badge text-primary align-self-start'></i>
-                <div class="activity-content">
-                  6 defected items detected
-                </div>
-              </div><!-- End activity item-->
 
-              <div class="activity-item d-flex">
-                <div class="activite-label">1 day</div>
-                <i class='bi bi-circle-fill activity-badge text-info align-self-start'></i>
-                <div class="activity-content">
-                  Supplier Deliver <a href="#" class="fw-bold text-dark">November 10, 2021</a> SH Wrappers Co.
-                </div>
-              </div><!-- End activity item-->
+            if ($products_total = mysqli_num_rows($query_products_run)) {
+              //sample
+              if ($products_total <= 10)
+                echo '<div class="alert alert-primary bg-primary text-light border-0 alert-dismissible fade show" role="alert">
+                Raw Materials is dropping low.
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>';
+            } else if ($pe_total <= 1) {
+              echo '<div class="alert alert-danger bg-danger text-light border-0 alert-dismissible fade show" role="alert">
+                Critical, Raw Materials is Empty, Please add new stock
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>';
+            }
 
-              <div class="activity-item d-flex">
-                <div class="activite-label">2 days</div>
-                <i class='bi bi-circle-fill activity-badge text-warning align-self-start'></i>
-                <div class="activity-content">
-                  Holiday November 1, 2021
-                </div>
-              </div><!-- End activity item-->
+            $sql = "SELECT * from products";
+            $query_products_run = mysqli_query($data, $sql);
 
-              <div class="activity-item d-flex">
-                <div class="activite-label">4 weeks</div>
-                <i class='bi bi-circle-fill activity-badge text-muted align-self-start'></i>
-                <div class="activity-content">
-                  System Maintenance
-                </div>
-              </div><!-- End activity item-->
 
-            </div>
+            if ($products_total = mysqli_num_rows($query_products_run)) {
+              //sample
+              if ($products_total <= 10)
+                echo '<div class="alert alert-primary bg-primary text-light border-0 alert-dismissible fade show" role="alert">
+                Products is dropping low.
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>';
+            } else if ($pe_total <= 1) {
+              echo '<div class="alert alert-danger bg-danger text-light border-0 alert-dismissible fade show" role="alert">
+                Critical, Products is Empty, Please add new stock
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>';
+            }
+
+            $sql = "SELECT * from components";
+            $query_products_run = mysqli_query($data, $sql);
+
+
+            if ($products_total = mysqli_num_rows($query_products_run)) {
+              //sample
+              if ($products_total <= 10)
+                echo '<div class="alert alert-primary bg-primary text-light border-0 alert-dismissible fade show" role="alert">
+                Components is dropping low.
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>';
+            } else if ($pe_total <= 1) {
+              echo '<div class="alert alert-danger bg-danger text-light border-0 alert-dismissible fade show" role="alert">
+                Critical, Components is Empty, Please add new stock
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>';
+            }
+
+
+            //Bigapple
+            include_once 'conndb.php';
+
+            //Pellet PE
+            $sql = "SELECT itemtype from rawmaterials WHERE itemtype = 'Pelletized PE'";
+            $query_pe_run = mysqli_query($data, $sql);
+
+
+            if ($pe_total = mysqli_num_rows($query_pe_run)) {
+              if ($pe_total <= 5) {
+                echo '<div class="alert alert-warning bg-warning text-light border-0 alert-dismissible fade show" role="alert">
+                Warning, Pelletized PE dropping low.
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>';
+              }
+              //echo $pe_total;
+            } else if ($pe_total <= 1) {
+              echo '<div class="alert alert-danger bg-danger text-light border-0 alert-dismissible fade show" role="alert">
+                Critical, Pelletized PE is Empty, Please add new stock
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>';
+            }
+            //pellet HD
+            $sql = "SELECT itemtype from rawmaterials WHERE itemtype = 'Pelletized HD'";
+            $query_hd_run = mysqli_query($data, $sql);
+
+
+            if ($hd_total = mysqli_num_rows($query_hd_run)) {
+              if ($hd_total <= 5) {
+                echo '<div class="alert alert-warning bg-warning text-light border-0 alert-dismissible fade show" role="alert">
+                Warning, Pelletized HD dropping low.
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>';
+              }
+              // echo $hd_total;
+            } else if ($hd_total <= 1) {
+              echo '<div class="alert alert-danger bg-danger text-light border-0 alert-dismissible fade show" role="alert">
+                Critical, Pelletized HD is Empty, Please add new stock
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>';
+            }
+            //LDPE
+            $sql = "SELECT itemtype from rawmaterials WHERE itemtype = 'LDPE'";
+            $query_ldpe_run = mysqli_query($data, $sql);
+
+
+            if ($ldpe_total = mysqli_num_rows($query_ldpe_run)) {
+              if ($ldpe_total <= 5) {
+                echo '<div class="alert alert-warning bg-warning text-light border-0 alert-dismissible fade show" role="alert">
+               Warning, LDPE dropping low.
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>';
+              }
+              // echo $ldpe_total;
+            } else if ($ldpe_total <= 1) {
+              echo '<div class="alert alert-danger bg-danger text-light border-0 alert-dismissible fade show" role="alert">
+                Critical, LDPE is Empty, Please add new stock
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>';
+            }
+            //LLDPE
+            $sql = "SELECT itemtype from rawmaterials WHERE itemtype = 'LLDPE'";
+            $query_lldpe_run = mysqli_query($data, $sql);
+
+
+            if ($lldpe_total = mysqli_num_rows($query_lldpe_run)) {
+              if ($lldpe_total <= 5) {
+                echo '<div class="alert alert-warning bg-warning text-light border-0 alert-dismissible fade show" role="alert">
+                Warning, LLDPE dropping low.
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>';
+              }
+              //echo $lldpe_total;
+            } else if ($lldpe_total <= 1) {
+              echo '<div class="alert alert-danger bg-danger text-light border-0 alert-dismissible fade show" role="alert">
+                Critical, LLDPE is Empty, Please add new stock
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>';
+            }
+            //HDPE
+            $sql = "SELECT itemtype from rawmaterials WHERE itemtype = 'HDPE'";
+            $query_hdpe_run = mysqli_query($data, $sql);
+
+
+            if ($hdpe_total = mysqli_num_rows($query_hdpe_run)) {
+              if ($hdpe_total <= 5) {
+                echo '<div class="alert alert-warning bg-warning text-light border-0 alert-dismissible fade show" role="alert">
+                Warning, HDPE dropping low.
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>';
+              }
+              //echo $hdpe_total;
+            } else if ($hdpe_total <= 1) {
+              echo '<div class="alert alert-danger bg-danger text-light border-0 alert-dismissible fade show" role="alert">
+                Critical, HDPE is Empty, Please add new stock
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>';
+            }
+            //PP
+            $sql = "SELECT itemtype from rawmaterials WHERE itemtype = 'PP'";
+            $query_pp_run = mysqli_query($data, $sql);
+
+
+            if ($pp_total = mysqli_num_rows($query_pp_run)) {
+              if ($pp_total <= 5) {
+                echo '<div class="alert alert-warning bg-warning text-light border-0 alert-dismissible fade show" role="alert">
+                Warning, PP dropping low.
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>';
+              }
+              // echo $pp_total;
+            } else if ($pp_total <= 1) {
+              echo '<div class="alert alert-danger bg-danger text-light border-0 alert-dismissible fade show" role="alert">
+                Critical, PP is Empty, Please add new stock
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>';
+            }
+            ?>
 
           </div>
         </div><!-- End Recent Activity -->
@@ -584,8 +796,6 @@ include_once 'header-sidebar.php';
 
         if ($pe_total = mysqli_num_rows($query_pe_run)) {
           //echo $pe_total;
-        } else {
-          echo '<h4 class="mb-0">No Data</h4>';
         }
         //pellet HD
         $sql = "SELECT itemtype from rawmaterials WHERE itemtype = 'Pelletized HD'";
@@ -594,8 +804,6 @@ include_once 'header-sidebar.php';
 
         if ($hd_total = mysqli_num_rows($query_hd_run)) {
           // echo $hd_total;
-        } else {
-          echo '<h4 class="mb-0">No Data</h4>';
         }
         //LDPE
         $sql = "SELECT itemtype from rawmaterials WHERE itemtype = 'LDPE'";
@@ -604,8 +812,6 @@ include_once 'header-sidebar.php';
 
         if ($ldpe_total = mysqli_num_rows($query_ldpe_run)) {
           // echo $ldpe_total;
-        } else {
-          echo '<h4 class="mb-0">No Data</h4>';
         }
         //LLDPE
         $sql = "SELECT itemtype from rawmaterials WHERE itemtype = 'LLDPE'";
@@ -614,8 +820,6 @@ include_once 'header-sidebar.php';
 
         if ($lldpe_total = mysqli_num_rows($query_lldpe_run)) {
           //echo $lldpe_total;
-        } else {
-          echo '<h4 class="mb-0">No Data</h4>';
         }
         //HDPE
         $sql = "SELECT itemtype from rawmaterials WHERE itemtype = 'HDPE'";
@@ -624,8 +828,6 @@ include_once 'header-sidebar.php';
 
         if ($hdpe_total = mysqli_num_rows($query_hdpe_run)) {
           //echo $hdpe_total;
-        } else {
-          echo '<h4 class="mb-0">No Data</h4>';
         }
         //PP
         $sql = "SELECT itemtype from rawmaterials WHERE itemtype = 'PP'";
@@ -634,8 +836,6 @@ include_once 'header-sidebar.php';
 
         if ($pp_total = mysqli_num_rows($query_pp_run)) {
           // echo $pp_total;
-        } else {
-          echo '<h4 class="mb-0">No Data</h4>';
         }
 
         ?>
@@ -725,6 +925,10 @@ include_once 'header-sidebar.php';
           </div>
         </div><!-- End Website Traffic -->
 
+
+
+
+
         <!-- News & Updates Traffic --
           <div class="card">
             <div class="filter">
@@ -780,6 +984,7 @@ include_once 'header-sidebar.php';
           </div><!- End News & Updates -->
 
       </div><!-- End Right side columns -->
+
 
     </div>
   </section>

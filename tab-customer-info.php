@@ -6,10 +6,23 @@ require_once 'includes/load.php';
 
 <main id="main" class="main">
 
+  <div class="pagetitle">
+    <h1>Dashboard</h1>
+    <nav>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="home.php">Home</a></li>
+
+        <li class="breadcrumb-item active">Dashboard</li>
+
+      </ol>
+    </nav>
+  </div><!-- End Page Title -->
+
   <h1>Customer Information</h1>
   <div class="col-md-12">
     <?php echo display_msg($msg); ?>
   </div>
+
 
 
 
@@ -25,6 +38,7 @@ require_once 'includes/load.php';
         <?php require_once 'process.php';
         ?>
         <form class="row g-3" action="process.php" method="POST">
+
           <div class="modal-body">
             <div class="col-md-12">
               <label for="inputName5" class="form-label">Company Name </label>
@@ -87,27 +101,10 @@ require_once 'includes/load.php';
   <div class="col-12">
     <div class="card recent-sales">
 
-
-      <div class="filter">
-        <a class="icon" href="#" data-bs-toggle="dropdown"><i></i></a>
-        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-          <li class="dropdown-header text-start">
-            <h6>Filter</h6>
-          </li>
-
-
-
-          <li><a class="dropdown-item" href="#">Today</a></li>
-          <li><a class="dropdown-item" href="#">This Month</a></li>
-          <li><a class="dropdown-item" href="#">This Year</a></li>
-        </ul>
-      </div>
-
-
       <div class="card-body">
         <h5 class="card-title">Customer Overview <span>| Today</span></h5>
 
-        <table class="table table-borderless datatable">
+        <table id="table" class="table table-borderless datatable">
 
           <thead>
             <tr>
@@ -192,17 +189,20 @@ require_once 'includes/load.php';
 <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
 <script src="assets/vendor/echarts/echarts.min.js"></script>
 
-<script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.11.4/js/dataTables.bootstrap4.min.js"></script>
+<!-- <script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.4/js/dataTables.bootstrap4.min.js"></script> -->
 
-<script>
-  $(document).ready(function() {
-    $('#datatableid').DataTable();
-  });
-</script>
+<script src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+
+
 
 <!-- Template Main JS File -->
 <script src="assets/js/main.js"></script>
+<script>
+  $(document).ready(function() {
+    $('#table').DataTable();
+  });
+</script>
 <?php require_once 'footerdemo.php' ?>
 
 </body>
