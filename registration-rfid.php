@@ -38,7 +38,6 @@ require_once 'includes/load.php';
               
               <input type="text" name="id" class="form-control" id="itemname" value="<?php require_once 'UIDContainer.php';
               ?>"></input>
-              <?php ?>
             </div>
           </div>
         </div>

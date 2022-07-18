@@ -5,6 +5,11 @@
 		private static $dbHost = 'localhost' ;
 		private static $dbUsername = 'root';
 		private static $dbUserPassword = '';
+
+		// private static $dbName = 'epiz_32178271_user' ;
+		// private static $dbHost = 'sql212.epizy.com' ;
+		// private static $dbUsername = 'epiz_32178271';
+		// private static $dbUserPassword = 'JKy0lonNYj';
 		 
 		private static $cont  = null;
 		 

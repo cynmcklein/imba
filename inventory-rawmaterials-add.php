@@ -18,7 +18,7 @@
 
         <div class="card">
 
-          <h5 class="card-title">Item Description</h5>
+          <h5 class="card-title">New Raw Material</h5>
 
           <!-- General Form Elements -->
 
@@ -29,6 +29,12 @@
               <label for="inputEmail" class="col-sm-2 col-form-label">Item Code</label>
               <div class="col-sm-3">
                 <input type="text" name="itemcode" class="form-control" id="itemcode">
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label for="inputEmail" class="col-sm-2 col-form-label">Item Description</label>
+              <div class="col-sm-10">
+                <input type="text" name="itemdescrip" class="form-control" id="itemdescrip">
               </div>
             </div>
             <div class="row mb-3">
