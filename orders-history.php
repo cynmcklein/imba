@@ -11,11 +11,11 @@
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th scope="col">Code</th>
-                        <th scope="col">Item Name</th>
-                        <th scope="col">Item Type</th>
-                        <th scope="col">Supplier Name</th>
+                        <th scope="col">Product Name</th>
+                        <th scope="col">Plastic Type</th>
+                        <th scope="col">Number of Colors</th>
                         <th scope="col">Quantity</th>
+                        <th scope="col">Customer</th>
 
                         <th scope="col">Actions</th>
                     </tr>
@@ -25,33 +25,33 @@
 
                     require_once 'conndb.php';
 
-                    $query = mysqli_query($data, "SELECT * FROM components");
+                    $query = mysqli_query($data, "SELECT * FROM order_history");
                     while ($row = mysqli_fetch_array($query)) {
 
 
                     ?>
                         <tr>
 
-                            <td><?php echo $row['itemcode']; ?></td>
+                            <td><?php echo $row['product_name']; ?></td>
 
 
-                            <td><?php echo $row['itemname']; ?></td>
+                            <td><?php echo $row['plastic_type']; ?></td>
 
 
-                            <td><?php echo $row['itemtype']; ?></td>
+                            <td><?php echo $row['number_colors']; ?></td>
 
 
-                            <td><?php echo $row['suppliername']; ?></td>
+                            <td><?php echo $row['qty']; ?></td>
 
 
-                            <td><?php echo $row['quantity']; ?></td>
+                            <td><?php echo $row['customer_id']; ?></td>
 
 
 
                             <td>
 
-                                <a href="edit-inv-components.php?edit=<?php echo $row['id']; ?>"><button class="btn btn-success ri-contacts-fill" type="button" data-toggle="tooltip" data-placement="top" title="Edit"></button></a>
-                                <a href='delete-inv-components.php?delete=<?php echo $row['id']; ?>'><button class="btn btn-danger ri-delete-bin-6-line" name="btnDelete" type="button" data-toggle="tooltip" data-placement="top" title="Delete"></button></a>
+                                <a href="edit-order-history.php?edit=<?php echo $row['id']; ?>"><button class="btn btn-success ri-contacts-fill" type="button" data-toggle="tooltip" data-placement="top" title="Edit"></button></a>
+                                <a href='delete/delete-order-history.php?historydelete=<?php echo $row['id']; ?>'><button class="btn btn-danger ri-delete-bin-6-line" name="btnDelete" type="button" data-toggle="tooltip" data-placement="top" title="Delete"></button></a>
 
                             </td>
                         </tr>
