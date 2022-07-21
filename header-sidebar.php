@@ -67,7 +67,15 @@ $user = current_user(); ?>
         });
     </script>
 
-
+    <!-- For RFID -->
+    <!-- <script>
+		$(document).ready(function(){
+			 $("#getUID").load("UIDContainer.php");
+			setInterval(function() {
+				$("#getUID").load("UIDContainer.php");
+			}, 500);
+		});
+	</script> -->
 
 </head>
 
@@ -485,6 +493,24 @@ $user = current_user(); ?>
                         <li>
                             <a href="charts-echarts.html">
                                 <i class="bi bi-circle"></i><span>ECharts</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link collapsed" data-bs-target="#rfid-nav" data-bs-toggle="collapse" href="#">
+                        <i class="bi bi-journal-text"></i><span>RFID</span><i class="bi bi-chevron-down ms-auto"></i>
+                    </a>
+                    <ul id="rfid-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                        <li>
+                            <a href="registration-rfid.php">
+                                <i class="bi bi-circle"></i><span>Registration</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="manage-rfid.php">
+                                <i class="bi bi-circle"></i><span>Manage RFID</span>
                             </a>
                         </li>
                     </ul>

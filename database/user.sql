@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 16, 2022 at 03:53 PM
+-- Generation Time: Jul 18, 2022 at 07:54 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -69,7 +69,13 @@ INSERT INTO `customer` (`id`, `company`, `email`, `contact`, `conperson`, `addre
 (147, 'Zues Manifacturing', 'sample@sample', '09123456789', 'Juan Cruz', 'GMA Cavite', 'Tin Galang'),
 (148, 'Adidas', 'Sample@sample', '09123456789', '09099292905', 'Bacoor Cavite', 'Ana Tan'),
 (149, 'Mitsu Tech', 'sampleemail@s', '09092152315', 'Kurt Tan', 'Muntinlupa', 'Adrian Yu'),
-(150, 'Kinspec', 'email@sample', '09325326432', 'Arvin Austria', 'GMA Cavite', 'Joy Chua');
+(150, 'Kinspec', 'email@sample', '09325326432', 'Arvin Austria', 'GMA Cavite', 'Joy Chua'),
+(152, 'sample', 'sample@smple', '0945737453453', 'Cyan', 'Caavite', ''),
+(153, 'asdsd', 'sdsd@sdsd', 'sdsd', 'asds', 'asdsda', ''),
+(154, 'sadasad', 'dasdas@sdas', 'asdasd', 'sdasd', 'asdasd', ''),
+(159, 'sdasda', 'sdasds@sdasdas', 'sdads', 'asdasd', 'asdasda', ''),
+(160, 'sdasd', 'sdasd@sdas', 'asdasd', 'sadasd', 'asdasd', ''),
+(161, 'asdsa', 'sdasd@sda', '231231', 'asdas', 'adasd', 'adsasad');
 
 -- --------------------------------------------------------
 
@@ -114,6 +120,28 @@ CREATE TABLE `login` (
 INSERT INTO `login` (`id`, `username`, `password`, `usertype`) VALUES
 (1, 'admin', '1234', 'admin'),
 (2, 'prod', '4321', 'user');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `order_history`
+--
+
+CREATE TABLE `order_history` (
+  `id` int(100) NOT NULL,
+  `product_name` varchar(100) NOT NULL,
+  `plastic_type` varchar(100) NOT NULL,
+  `number_colors` varchar(100) NOT NULL,
+  `qty` varchar(100) NOT NULL,
+  `customer_id` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `order_history`
+--
+
+INSERT INTO `order_history` (`id`, `product_name`, `plastic_type`, `number_colors`, `qty`, `customer_id`) VALUES
+(3, 'qwerty saaf', 'Open this select menu', '231', '1231', '');
 
 -- --------------------------------------------------------
 
@@ -217,11 +245,37 @@ INSERT INTO `rawmaterials` (`id`, `itemcode`, `itemname`, `itemtype`, `suppliern
 (2, '1235', 'OBM White', 'Pelletized PE', 'Carl', 421),
 (12, 'PE-2A', 'HD Green', 'Pelletized HD', 'Cyan', 126),
 (13, 'B432', 'PE Printed', 'LDPE', 'Arvin Austria', 123),
-(14, 'HD543', 'HD-OPW', 'HDPE', 'Yllon Ibanez', 423),
 (15, 'P3-3A', 'White Gray', 'LDPE', '123', 123),
 (16, 'PE-32', 'PE Printed', 'Pelletized PE', 'Adrian salas', 532),
-(17, 'H151', 'Cosmethane', 'PP', 'Mitsu Tech', 756),
-(18, '6543', 'Qamar', 'LLDPE', 'Harvey Ulavia', 645);
+(18, '6543', 'Qamar', 'LLDPE', 'Harvey Ulavia', 645),
+(19, '31251', 'Sample', 'Pelletized HD', 'cyan', 31),
+(20, '1312', 'Item sample', 'Pelletized HD', 'han', 321);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `rfiddb`
+--
+
+CREATE TABLE `rfiddb` (
+  `id` varchar(100) NOT NULL,
+  `code` varchar(100) NOT NULL,
+  `item_name` varchar(100) NOT NULL,
+  `item_type` varchar(100) NOT NULL,
+  `supplier_name` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `rfiddb`
+--
+
+INSERT INTO `rfiddb` (`id`, `code`, `item_name`, `item_type`, `supplier_name`) VALUES
+('', '', '', 'Open this select menu', ''),
+('1', '46543654651', 'OBM White', 'PE', 'agdasgfafas'),
+('13942490', '664272', 'PE', 'Open this select menu', 'afasdfsad'),
+('23123', 'asdsd', 'adsda', 'LDPE', 'sddsd'),
+('CA0AFF80', '68736435', 'HDPE', 'HDPE', 'sfasgdhwwea'),
+('F3485790', '51252141', 'PP', 'PP', 'sdhwqwras');
 
 -- --------------------------------------------------------
 
@@ -269,8 +323,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `username`, `password`, `group_name`, `image`, `status`, `last_login`) VALUES
-(43, 'Cyan', 'Admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'Admin', '797y2ilu43.jpg', 1, '2022-03-16 12:19:08'),
-(44, 'Cyan Pereyra', 'Prod', 'f6c433acac2a27cc06a0625896fe3e540a275ac9', 'Production', '3s33yatr44.jpg', 1, '2022-03-16 11:37:44'),
+(43, 'Cyan', 'Admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'Admin', '797y2ilu43.jpg', 1, '2022-07-18 05:46:36'),
+(44, 'Cyan Pereyra', 'Prod', 'f6c433acac2a27cc06a0625896fe3e540a275ac9', 'Production', '3s33yatr44.jpg', 1, '2022-07-16 09:53:06'),
 (45, 'Cyan Pereyra', 'Cyan', '97bfc067fcea5dde150d9c32fcea1c53c951883d', 'Admin', 'syjpmjk245.jpg', 1, '2022-03-15 20:46:28'),
 (46, 'Allen Macin', 'Allen', 'a4aed34f4966dc8688b8e67046bf8b276626e284', 'Admin', 'y5kcc5nc46.jpg', 1, '2022-03-15 20:09:19'),
 (47, 'Arlene Pangilinan', 'Arlene', '616e262a0de67378046be3a5b05580b565ffddaa', 'Admin', 'no_image.jpg', 1, '2022-03-15 11:21:19');
@@ -304,6 +358,12 @@ ALTER TABLE `login`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `order_history`
+--
+ALTER TABLE `order_history`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `products`
 --
 ALTER TABLE `products`
@@ -325,6 +385,12 @@ ALTER TABLE `purchaserawmaterials`
 -- Indexes for table `rawmaterials`
 --
 ALTER TABLE `rawmaterials`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `rfiddb`
+--
+ALTER TABLE `rfiddb`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -353,7 +419,7 @@ ALTER TABLE `components`
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=152;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=162;
 
 --
 -- AUTO_INCREMENT for table `customerinfo`
@@ -366,6 +432,12 @@ ALTER TABLE `customerinfo`
 --
 ALTER TABLE `login`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `order_history`
+--
+ALTER TABLE `order_history`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `products`
@@ -389,7 +461,7 @@ ALTER TABLE `purchaserawmaterials`
 -- AUTO_INCREMENT for table `rawmaterials`
 --
 ALTER TABLE `rawmaterials`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `supplier`
