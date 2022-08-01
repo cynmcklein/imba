@@ -57,7 +57,7 @@
             </div>
 
             <div class="row mb-3">
-              <label for="inputDate" class="col-sm-2 col-form-label">Recieve Date</label>
+              <label for="inputDate" class="col-sm-2 col-form-label">Delivery Date</label>
               <div class="col-sm-10">
                 <input type="date" name="POrecieveDate" class="form-control">
               </div>
@@ -125,7 +125,7 @@
               <th scope="col">Description</th>
               <th scope="col">PO Date</th>
               <th scope="col">Order Date</th>
-              <th scope="col">Recieve Date</th>
+              <th scope="col">Delivery Date</th>
 
               <th scope="col">Actions</th>
 

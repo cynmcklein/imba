@@ -585,15 +585,7 @@ include_once 'header-sidebar.php';
         <div class="card">
           <div class="filter">
             <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-              <li class="dropdown-header text-start">
-                <h6>Filter</h6>
-              </li>
 
-              <li><a class="dropdown-item" href="#">Today</a></li>
-              <li><a class="dropdown-item" href="#">This Month</a></li>
-              <li><a class="dropdown-item" href="#">This Year</a></li>
-            </ul>
           </div>
           <!-- notif connection -->
 
@@ -601,7 +593,7 @@ include_once 'header-sidebar.php';
           <!-- notif connection ends -->
 
           <div class="card-body">
-            <h5 class="card-title">Notifications <span>| Today</span></h5>
+            <h5 class="card-title">Notifications</h5>
 
             <?php
 
@@ -614,10 +606,10 @@ include_once 'header-sidebar.php';
             if ($products_total = mysqli_num_rows($query_products_run)) {
               //sample
               if ($products_total <= 10)
-                echo '<div class="alert alert-primary bg-primary text-light border-0 alert-dismissible fade show" role="alert">
+                echo '<a href="inventory-rawmaterials.php"><div class="alert alert-primary bg-primary text-light border-0 alert-dismissible fade show" role="alert">
                 Raw Materials is dropping low.
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div>';
+              </div></a>';
             } else if ($pe_total <= 1) {
               echo '<div class="alert alert-danger bg-danger text-light border-0 alert-dismissible fade show" role="alert">
                 Critical, Raw Materials is Empty, Please add new stock
@@ -632,15 +624,15 @@ include_once 'header-sidebar.php';
             if ($products_total = mysqli_num_rows($query_products_run)) {
               //sample
               if ($products_total <= 10)
-                echo '<div class="alert alert-primary bg-primary text-light border-0 alert-dismissible fade show" role="alert">
-                Products is dropping low.
+                echo '<a href="inventory-products.php"><div class="alert alert-primary bg-primary text-light border-0 alert-dismissible fade show" role="alert">
+                Products is dropping low. 
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div>';
+              </div></a>';
             } else if ($pe_total <= 1) {
-              echo '<div class="alert alert-danger bg-danger text-light border-0 alert-dismissible fade show" role="alert">
+              echo '<a href="inventory-products.php"><div class="alert alert-danger bg-danger text-light border-0 alert-dismissible fade show" role="alert">
                 Critical, Products is Empty, Please add new stock
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div>';
+              </div></a>';
             }
 
             $sql = "SELECT * from components";
@@ -650,10 +642,10 @@ include_once 'header-sidebar.php';
             if ($products_total = mysqli_num_rows($query_products_run)) {
               //sample
               if ($products_total <= 10)
-                echo '<div class="alert alert-primary bg-primary text-light border-0 alert-dismissible fade show" role="alert">
+                echo '<a href="inventory-components.php"><div class="alert alert-primary bg-primary text-light border-0 alert-dismissible fade show" role="alert">
                 Components is dropping low.
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div>';
+              </div></a>';
             } else if ($pe_total <= 1) {
               echo '<div class="alert alert-danger bg-danger text-light border-0 alert-dismissible fade show" role="alert">
                 Critical, Components is Empty, Please add new stock
@@ -672,17 +664,17 @@ include_once 'header-sidebar.php';
 
             if ($pe_total = mysqli_num_rows($query_pe_run)) {
               if ($pe_total <= 5) {
-                echo '<div class="alert alert-warning bg-warning text-light border-0 alert-dismissible fade show" role="alert">
+                echo '<a href="inventory-rawmaterials.php"><div class="alert alert-warning bg-warning text-light border-0 alert-dismissible fade show" role="alert">
                 Warning, Pelletized PE dropping low.
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div>';
+              </div></a>';
               }
               //echo $pe_total;
             } else if ($pe_total <= 1) {
-              echo '<div class="alert alert-danger bg-danger text-light border-0 alert-dismissible fade show" role="alert">
+              echo '<a href="inventory-rawmaterials.php"><div class="alert alert-danger bg-danger text-light border-0 alert-dismissible fade show" role="alert">
                 Critical, Pelletized PE is Empty, Please add new stock
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div>';
+              </div></a>';
             }
             //pellet HD
             $sql = "SELECT itemtype from rawmaterials WHERE itemtype = 'Pelletized HD'";
@@ -691,17 +683,17 @@ include_once 'header-sidebar.php';
 
             if ($hd_total = mysqli_num_rows($query_hd_run)) {
               if ($hd_total <= 5) {
-                echo '<div class="alert alert-warning bg-warning text-light border-0 alert-dismissible fade show" role="alert">
+                echo '<a href="inventory-rawmaterials.php"><div class="alert alert-warning bg-warning text-light border-0 alert-dismissible fade show" role="alert">
                 Warning, Pelletized HD dropping low.
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div>';
+              </div></a>';
               }
               // echo $hd_total;
             } else if ($hd_total <= 1) {
-              echo '<div class="alert alert-danger bg-danger text-light border-0 alert-dismissible fade show" role="alert">
+              echo '<a href="inventory-rawmaterials.php"><div class="alert alert-danger bg-danger text-light border-0 alert-dismissible fade show" role="alert">
                 Critical, Pelletized HD is Empty, Please add new stock
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div>';
+              </div></a>';
             }
             //LDPE
             $sql = "SELECT itemtype from rawmaterials WHERE itemtype = 'LDPE'";
@@ -710,17 +702,17 @@ include_once 'header-sidebar.php';
 
             if ($ldpe_total = mysqli_num_rows($query_ldpe_run)) {
               if ($ldpe_total <= 5) {
-                echo '<div class="alert alert-warning bg-warning text-light border-0 alert-dismissible fade show" role="alert">
+                echo '<a href="inventory-rawmaterials.php"><div class="alert alert-warning bg-warning text-light border-0 alert-dismissible fade show" role="alert">
                Warning, LDPE dropping low.
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div>';
+              </div></a>';
               }
               // echo $ldpe_total;
             } else if ($ldpe_total <= 1) {
-              echo '<div class="alert alert-danger bg-danger text-light border-0 alert-dismissible fade show" role="alert">
+              echo '<a href="inventory-rawmaterials.php"><div class="alert alert-danger bg-danger text-light border-0 alert-dismissible fade show" role="alert">
                 Critical, LDPE is Empty, Please add new stock
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div>';
+              </div></a>';
             }
             //LLDPE
             $sql = "SELECT itemtype from rawmaterials WHERE itemtype = 'LLDPE'";
@@ -729,17 +721,17 @@ include_once 'header-sidebar.php';
 
             if ($lldpe_total = mysqli_num_rows($query_lldpe_run)) {
               if ($lldpe_total <= 5) {
-                echo '<div class="alert alert-warning bg-warning text-light border-0 alert-dismissible fade show" role="alert">
+                echo '<a href="inventory-rawmaterials.php"><div class="alert alert-warning bg-warning text-light border-0 alert-dismissible fade show" role="alert">
                 Warning, LLDPE dropping low.
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div>';
+              </div></a>';
               }
               //echo $lldpe_total;
             } else if ($lldpe_total <= 1) {
-              echo '<div class="alert alert-danger bg-danger text-light border-0 alert-dismissible fade show" role="alert">
+              echo '<a href="inventory-rawmaterials.php"><div class="alert alert-danger bg-danger text-light border-0 alert-dismissible fade show" role="alert">
                 Critical, LLDPE is Empty, Please add new stock
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div>';
+              </div></a>';
             }
             //HDPE
             $sql = "SELECT itemtype from rawmaterials WHERE itemtype = 'HDPE'";
@@ -748,17 +740,17 @@ include_once 'header-sidebar.php';
 
             if ($hdpe_total = mysqli_num_rows($query_hdpe_run)) {
               if ($hdpe_total <= 5) {
-                echo '<div class="alert alert-warning bg-warning text-light border-0 alert-dismissible fade show" role="alert">
+                echo '<a href="inventory-rawmaterials.php"><div class="alert alert-warning bg-warning text-light border-0 alert-dismissible fade show" role="alert">
                 Warning, HDPE dropping low.
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div>';
+              </div></a>';
               }
               //echo $hdpe_total;
             } else if ($hdpe_total <= 1) {
-              echo '<div class="alert alert-danger bg-danger text-light border-0 alert-dismissible fade show" role="alert">
+              echo '<a href="inventory-rawmaterials.php"><div class="alert alert-danger bg-danger text-light border-0 alert-dismissible fade show" role="alert">
                 Critical, HDPE is Empty, Please add new stock
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div>';
+              </div></a>';
             }
             //PP
             $sql = "SELECT itemtype from rawmaterials WHERE itemtype = 'PP'";
@@ -767,169 +759,110 @@ include_once 'header-sidebar.php';
 
             if ($pp_total = mysqli_num_rows($query_pp_run)) {
               if ($pp_total <= 5) {
-                echo '<div class="alert alert-warning bg-warning text-light border-0 alert-dismissible fade show" role="alert">
+                echo '<a href="inventory-rawmaterials.php"><div class="alert alert-warning bg-warning text-light border-0 alert-dismissible fade show" role="alert">
                 Warning, PP dropping low.
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div>';
+              </div></a>';
               }
               // echo $pp_total;
             } else if ($pp_total <= 1) {
-              echo '<div class="alert alert-danger bg-danger text-light border-0 alert-dismissible fade show" role="alert">
+              echo '<a href="inventory-rawmaterials.php"><div class="alert alert-danger bg-danger text-light border-0 alert-dismissible fade show" role="alert">
                 Critical, PP is Empty, Please add new stock
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div>';
+              </div></a>';
             }
             ?>
 
-          </div>
-        </div><!-- End Recent Activity -->
 
-        <?php
+            <!-- Website Traffic -->
+            <div class="card">
+              <div class="filter">
+                <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                  <li class="dropdown-header text-start">
+                    <h6>Filter</h6>
+                  </li>
 
-        //Bigapple
-        include_once 'conndb.php';
+                  <li><a class="dropdown-item" href="#">Today</a></li>
+                  <li><a class="dropdown-item" href="#">This Month</a></li>
+                  <li><a class="dropdown-item" href="#">This Year</a></li>
+                </ul>
+              </div>
 
-        //Pellet PE
-        $sql = "SELECT itemtype from rawmaterials WHERE itemtype = 'Pelletized PE'";
-        $query_pe_run = mysqli_query($data, $sql);
+              <div class="card-body pb-0">
+                <h5 class="card-title">Material Type <span>| Update</span></h5>
 
-
-        if ($pe_total = mysqli_num_rows($query_pe_run)) {
-          //echo $pe_total;
-        }
-        //pellet HD
-        $sql = "SELECT itemtype from rawmaterials WHERE itemtype = 'Pelletized HD'";
-        $query_hd_run = mysqli_query($data, $sql);
-
-
-        if ($hd_total = mysqli_num_rows($query_hd_run)) {
-          // echo $hd_total;
-        }
-        //LDPE
-        $sql = "SELECT itemtype from rawmaterials WHERE itemtype = 'LDPE'";
-        $query_ldpe_run = mysqli_query($data, $sql);
-
-
-        if ($ldpe_total = mysqli_num_rows($query_ldpe_run)) {
-          // echo $ldpe_total;
-        }
-        //LLDPE
-        $sql = "SELECT itemtype from rawmaterials WHERE itemtype = 'LLDPE'";
-        $query_lldpe_run = mysqli_query($data, $sql);
-
-
-        if ($lldpe_total = mysqli_num_rows($query_lldpe_run)) {
-          //echo $lldpe_total;
-        }
-        //HDPE
-        $sql = "SELECT itemtype from rawmaterials WHERE itemtype = 'HDPE'";
-        $query_hdpe_run = mysqli_query($data, $sql);
-
-
-        if ($hdpe_total = mysqli_num_rows($query_hdpe_run)) {
-          //echo $hdpe_total;
-        }
-        //PP
-        $sql = "SELECT itemtype from rawmaterials WHERE itemtype = 'PP'";
-        $query_pp_run = mysqli_query($data, $sql);
-
-
-        if ($pp_total = mysqli_num_rows($query_pp_run)) {
-          // echo $pp_total;
-        }
-
-        ?>
-
-
-        <!-- Website Traffic -->
-        <div class="card">
-          <div class="filter">
-            <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-              <li class="dropdown-header text-start">
-                <h6>Filter</h6>
-              </li>
-
-              <li><a class="dropdown-item" href="#">Today</a></li>
-              <li><a class="dropdown-item" href="#">This Month</a></li>
-              <li><a class="dropdown-item" href="#">This Year</a></li>
-            </ul>
-          </div>
-
-          <div class="card-body pb-0">
-            <h5 class="card-title">Material Type <span>| Update</span></h5>
-
-            <div id="trafficChart" style="min-height: 400px;" class="echart"></div>
+                <div id="trafficChart" style="min-height: 400px;" class="echart"></div>
 
 
 
-            <script>
-              document.addEventListener("DOMContentLoaded", () => {
-                echarts.init(document.querySelector("#trafficChart")).setOption({
-                  tooltip: {
-                    trigger: 'item'
-                  },
-                  legend: {
-                    top: '5%',
-                    left: 'center'
-                  },
-                  series: [{
-                    name: 'Access From',
-                    type: 'pie',
-                    radius: ['40%', '70%'],
-                    avoidLabelOverlap: false,
-                    label: {
-                      show: false,
-                      position: 'center'
-                    },
-                    emphasis: {
-                      label: {
-                        show: true,
-                        fontSize: '18',
-                        fontWeight: 'bold'
-                      }
-                    },
-                    labelLine: {
-                      show: false
-                    },
-                    data: [{
-                        value: <?php echo $pe_total; ?>,
-                        name: 'Pelletized PE'
+                <script>
+                  document.addEventListener("DOMContentLoaded", () => {
+                    echarts.init(document.querySelector("#trafficChart")).setOption({
+                      tooltip: {
+                        trigger: 'item'
                       },
-                      {
-                        value: <?php echo $hd_total; ?>,
-                        name: 'Pelletized HD'
+                      legend: {
+                        top: '5%',
+                        left: 'center'
                       },
-                      {
-                        value: <?php echo $ldpe_total; ?>,
-                        name: 'LDPE'
-                      },
-                      {
-                        value: <?php echo $lldpe_total; ?>,
-                        name: 'LLDPE'
-                      },
-                      {
-                        value: <?php echo $hdpe_total; ?>,
-                        name: 'HDPE'
-                      },
-                      {
-                        value: <?php echo $pp_total; ?>,
-                        name: 'PP'
-                      }
-                    ]
-                  }]
-                });
-              });
-            </script>
+                      series: [{
+                        name: 'Access From',
+                        type: 'pie',
+                        radius: ['40%', '70%'],
+                        avoidLabelOverlap: false,
+                        label: {
+                          show: false,
+                          position: 'center'
+                        },
+                        emphasis: {
+                          label: {
+                            show: true,
+                            fontSize: '18',
+                            fontWeight: 'bold'
+                          }
+                        },
+                        labelLine: {
+                          show: false
+                        },
+                        data: [{
+                            value: <?php echo $pe_total; ?>,
+                            name: 'Pelletized PE'
+                          },
+                          {
+                            value: <?php echo $hd_total; ?>,
+                            name: 'Pelletized HD'
+                          },
+                          {
+                            value: <?php echo $ldpe_total; ?>,
+                            name: 'LDPE'
+                          },
+                          {
+                            value: <?php echo $lldpe_total; ?>,
+                            name: 'LLDPE'
+                          },
+                          {
+                            value: <?php echo $hdpe_total; ?>,
+                            name: 'HDPE'
+                          },
+                          {
+                            value: <?php echo $pp_total; ?>,
+                            name: 'PP'
+                          }
+                        ]
+                      }]
+                    });
+                  });
+                </script>
 
-          </div>
-        </div><!-- End Website Traffic -->
+              </div>
+            </div><!-- End Website Traffic -->
 
 
 
 
 
-        <!-- News & Updates Traffic --
+            <!-- News & Updates Traffic --
           <div class="card">
             <div class="filter">
               <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
@@ -983,10 +916,10 @@ include_once 'header-sidebar.php';
             </div>
           </div><!- End News & Updates -->
 
-      </div><!-- End Right side columns -->
+          </div><!-- End Right side columns -->
 
 
-    </div>
+        </div>
   </section>
 
 </main><!-- End #main -->

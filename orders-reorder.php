@@ -3,7 +3,8 @@
 <main id="main" class="main">
   <h1>Reorder</h1>
 
-  <form class="row g-1">
+  <?php require_once 'orders-reorder-process.php'; ?>
+  <form action="orders-reorder-process.php" method="POST" class="row g-1">
 
     <?php
 
@@ -17,7 +18,7 @@
 
       <div class="col-md-12">
         <label for="inputState" class="form-label">Company Name</label>
-        <select id="inputState" class="form-select">
+        <select name="companyname" id="companyname" class="form-select">
 
           <?php
           while ($r = mysqli_fetch_array($query)) {
@@ -31,7 +32,8 @@
 
           <?php }
         }
-        mysqli_close($data) ?>
+        //mysqli_close($data) 
+          ?>
             </option>
 
         </select>
@@ -41,33 +43,38 @@
 
       <div class="col-md-12">
         <label for="inputName5" class="form-label">Product Name</label>
-        <input type="text" class="form-control" id="inputName5">
+        <input type="text" class="form-control" name="prodname" id="prodname">
       </div>
 
       <div class="col-md-4">
         <label for="inputState" class="form-label">Plastic Type</label>
-        <select id="inputState" class="form-select">
+        <select id="inputState" name="plastictype" id="plastictype" class="form-select">
           <option selected>Choose...</option>
-          <option>...</option>
+          <option>Pelletized PE</option>
+          <option>Pelletized HD</option>
+          <option>LDPE</option>
+          <option>LLDPE</option>
+          <option>HDPE</option>
+          <option>PP</option>
         </select>
       </div>
 
       <div class="col-md-4">
         <label for="inputAddress5" class="form-label">Number of Colors</label>
-        <input type="number" class="form-control" id="inputAddres5s" placeholder="">
+        <input type="number" class="form-control" name="numcolors" id="numcolors" placeholder="">
       </div>
       <div class="col-md-4">
         <label for="inputAddress2" class="form-label">Quantity</label>
-        <input type="number" class="form-control" id="inputAddress2" placeholder="">
+        <input type="number" class="form-control" name="qty" id="qty" placeholder="">
       </div>
 
       <div class="text-center">
-        <a href="payments.php"><button type="submit" class="btn btn-primary">Add Data</button></a>
+        <button type="submit" class="btn btn-primary">Add Data</button>
         <button type="reset" class="btn btn-secondary">Reset</button>
       </div>
   </form>
 
-
+  <?php mysqli_close($data) ?>
 </main><!-- End #main -->
 
 <!-- ======= Footer ======= -->

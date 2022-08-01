@@ -5,7 +5,7 @@
 
     <div class="card">
         <div class="card-body">
-            <h5 class="card-title">Components</h5>
+
 
             <!-- Table with hoverable rows -->
             <table class="table table-hover">
@@ -17,7 +17,8 @@
                         <th scope="col">Quantity</th>
                         <th scope="col">Customer</th>
 
-                        <th scope="col">Actions</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -45,6 +46,8 @@
 
 
                             <td><?php echo $row['customer_id']; ?></td>
+
+                            <td><?php echo $row['Date']; ?></td>
 
 
 
