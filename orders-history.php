@@ -1,4 +1,6 @@
-<?php require_once 'header-sidebar.php'; ?>
+<?php require_once 'header-sidebar.php';
+require_once 'includes/load.php';
+?>
 
 <main id="main" class="main">
     <h1>Order History</h1>

@@ -601,7 +601,9 @@
          </aside><!-- End Sidebar-->
 
          <main id="main" class="main">
-
+             <div class="col-md-12">
+                 <?php echo display_msg($msg); ?>
+             </div>
 
 
              <form action="" method="POST">

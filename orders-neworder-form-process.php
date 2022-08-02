@@ -1,4 +1,6 @@
 <?php
+include_once('includes/load.php');
+
 $host = "localhost";
 $user = "root";
 $password = "";
@@ -18,11 +20,10 @@ if (isset($_POST['submit'])) {
     if (!$insert) {
         echo mysqli_error($mysqli);
     } else {
-        require_once 'orders-neworder-form.php';
+        $session->msg('s', "Customer Added! ");
+        header("Location: orders-history.php");
     }
 }
-
-
 
 
 mysqli_close($mysqli)
