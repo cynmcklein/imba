@@ -132,13 +132,15 @@ $user = current_user(); ?>
     <?php if ($session->isUserLoggedIn(true)) : ?>
         <!-- ======= Header ======= -->
         <header id="header" class="header fixed-top d-flex align-items-center">
-
+            <i class="bi bi-list toggle-sidebar-btn"></i>
             <div class="logo d-flex align-items-center">
                 <a href="index.html" class="logo d-flex align-items-center">
+                    <img src="" alt="">
                     <img src="assets/img/imbalogomain.png" alt="">
-                    <span class="d-none d-lg-inline-flex">Inventory Management for Big Apple</span>
+                    <span class="d-none d-lg-inline-flex"> Inventory Management for Big Apple</span>
+
                 </a>
-                <!-- <i class="bi bi-list toggle-sidebar-btn"></i> -->
+
             </div>
 
 
@@ -154,12 +156,12 @@ $user = current_user(); ?>
 
                     <li class="nav-item dropdown">
 
-                        <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+                        <a class="nav-link nav-icon" href="notifications.php">
                             <i class="bi bi-bell"></i>
                             <span class="badge rounded-pill bg-warning badge-number">!</span>
                         </a> <!--  End Notification Icon -- -->
 
-                        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+                        <!-- <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
                             <li class="dropdown-header">
                                 You have 4 new notifications
                                 <a href="notifications.php"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
@@ -227,7 +229,7 @@ $user = current_user(); ?>
                                 <a href="#">Show all notifications</a>
                             </li>
 
-                        </ul> <!-- End Notification Dropdown Items -- -->
+                        </ul> End Notification Dropdown Items -- -->
 
                     </li> <!--  End Notification Nav -->
 
