@@ -5,6 +5,12 @@ include_once 'header-sidebar.php';
 
 ?>
 
+<style>
+  a {
+    color: white;
+  }
+</style>
+
 <main id="main" class="main">
 
   <div class="row">
@@ -607,9 +613,9 @@ include_once 'header-sidebar.php';
               //sample
               if ($products_total <= 10)
                 echo '<a href="inventory-rawmaterials.php"><div class="alert alert-primary bg-primary text-light border-0 alert-dismissible fade show" role="alert">
-                Raw Materials is dropping low.
+                Raw Materials is dropping low.</a>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div></a>';
+              </div>';
             } else if ($pe_total <= 1) {
               echo '<div class="alert alert-danger bg-danger text-light border-0 alert-dismissible fade show" role="alert">
                 Critical, Raw Materials is Empty, Please add new stock
@@ -625,14 +631,14 @@ include_once 'header-sidebar.php';
               //sample
               if ($products_total <= 10)
                 echo '<a href="inventory-products.php"><div class="alert alert-primary bg-primary text-light border-0 alert-dismissible fade show" role="alert">
-                Products is dropping low. 
+                Products is dropping low.</a> 
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div></a>';
+              </div>';
             } else if ($pe_total <= 1) {
               echo '<a href="inventory-products.php"><div class="alert alert-danger bg-danger text-light border-0 alert-dismissible fade show" role="alert">
-                Critical, Products is Empty, Please add new stock
+                Critical, Products is Empty, Please add new stock</a>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div></a>';
+              </div>';
             }
 
             $sql = "SELECT * from components";
@@ -643,9 +649,9 @@ include_once 'header-sidebar.php';
               //sample
               if ($products_total <= 10)
                 echo '<a href="inventory-components.php"><div class="alert alert-primary bg-primary text-light border-0 alert-dismissible fade show" role="alert">
-                Components is dropping low.
+                Components is dropping low.</a>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div></a>';
+              </div>';
             } else if ($pe_total <= 1) {
               echo '<div class="alert alert-danger bg-danger text-light border-0 alert-dismissible fade show" role="alert">
                 Critical, Components is Empty, Please add new stock
@@ -665,16 +671,16 @@ include_once 'header-sidebar.php';
             if ($pe_total = mysqli_num_rows($query_pe_run)) {
               if ($pe_total <= 5) {
                 echo '<a href="inventory-rawmaterials.php"><div class="alert alert-warning bg-warning text-light border-0 alert-dismissible fade show" role="alert">
-                Warning, Pelletized PE dropping low.
+                Warning, Pelletized PE dropping low.</a>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div></a>';
+              </div>';
               }
               //echo $pe_total;
             } else if ($pe_total <= 1) {
               echo '<a href="inventory-rawmaterials.php"><div class="alert alert-danger bg-danger text-light border-0 alert-dismissible fade show" role="alert">
-                Critical, Pelletized PE is Empty, Please add new stock
+                Critical, Pelletized PE is Empty, Please add new stock</a>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div></a>';
+              </div>';
             }
             //pellet HD
             $sql = "SELECT itemtype from rawmaterials WHERE itemtype = 'Pelletized HD'";
@@ -684,16 +690,16 @@ include_once 'header-sidebar.php';
             if ($hd_total = mysqli_num_rows($query_hd_run)) {
               if ($hd_total <= 5) {
                 echo '<a href="inventory-rawmaterials.php"><div class="alert alert-warning bg-warning text-light border-0 alert-dismissible fade show" role="alert">
-                Warning, Pelletized HD dropping low.
+                Warning, Pelletized HD dropping low.</a>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div></a>';
+              </div>';
               }
               // echo $hd_total;
             } else if ($hd_total <= 1) {
               echo '<a href="inventory-rawmaterials.php"><div class="alert alert-danger bg-danger text-light border-0 alert-dismissible fade show" role="alert">
-                Critical, Pelletized HD is Empty, Please add new stock
+                Critical, Pelletized HD is Empty, Please add new stock</a>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div></a>';
+              </div>';
             }
             //LDPE
             $sql = "SELECT itemtype from rawmaterials WHERE itemtype = 'LDPE'";
@@ -703,16 +709,16 @@ include_once 'header-sidebar.php';
             if ($ldpe_total = mysqli_num_rows($query_ldpe_run)) {
               if ($ldpe_total <= 5) {
                 echo '<a href="inventory-rawmaterials.php"><div class="alert alert-warning bg-warning text-light border-0 alert-dismissible fade show" role="alert">
-               Warning, LDPE dropping low.
+               Warning, LDPE dropping low.</a>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div></a>';
+              </div>';
               }
               // echo $ldpe_total;
             } else if ($ldpe_total <= 1) {
               echo '<a href="inventory-rawmaterials.php"><div class="alert alert-danger bg-danger text-light border-0 alert-dismissible fade show" role="alert">
-                Critical, LDPE is Empty, Please add new stock
+                Critical, LDPE is Empty, Please add new stock</a>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div></a>';
+              </div>';
             }
             //LLDPE
             $sql = "SELECT itemtype from rawmaterials WHERE itemtype = 'LLDPE'";
@@ -722,16 +728,16 @@ include_once 'header-sidebar.php';
             if ($lldpe_total = mysqli_num_rows($query_lldpe_run)) {
               if ($lldpe_total <= 5) {
                 echo '<a href="inventory-rawmaterials.php"><div class="alert alert-warning bg-warning text-light border-0 alert-dismissible fade show" role="alert">
-                Warning, LLDPE dropping low.
+                Warning, LLDPE dropping low.</a>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div></a>';
+              </div>';
               }
               //echo $lldpe_total;
             } else if ($lldpe_total <= 1) {
               echo '<a href="inventory-rawmaterials.php"><div class="alert alert-danger bg-danger text-light border-0 alert-dismissible fade show" role="alert">
-                Critical, LLDPE is Empty, Please add new stock
+                Critical, LLDPE is Empty, Please add new stock</a>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div></a>';
+              </div>';
             }
             //HDPE
             $sql = "SELECT itemtype from rawmaterials WHERE itemtype = 'HDPE'";
@@ -741,16 +747,16 @@ include_once 'header-sidebar.php';
             if ($hdpe_total = mysqli_num_rows($query_hdpe_run)) {
               if ($hdpe_total <= 5) {
                 echo '<a href="inventory-rawmaterials.php"><div class="alert alert-warning bg-warning text-light border-0 alert-dismissible fade show" role="alert">
-                Warning, HDPE dropping low.
+                Warning, HDPE dropping low.</a>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div></a>';
+              </div>';
               }
               //echo $hdpe_total;
             } else if ($hdpe_total <= 1) {
               echo '<a href="inventory-rawmaterials.php"><div class="alert alert-danger bg-danger text-light border-0 alert-dismissible fade show" role="alert">
-                Critical, HDPE is Empty, Please add new stock
+                Critical, HDPE is Empty, Please add new stock</a>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div></a>';
+              </div>';
             }
             //PP
             $sql = "SELECT itemtype from rawmaterials WHERE itemtype = 'PP'";
@@ -760,16 +766,16 @@ include_once 'header-sidebar.php';
             if ($pp_total = mysqli_num_rows($query_pp_run)) {
               if ($pp_total <= 5) {
                 echo '<a href="inventory-rawmaterials.php"><div class="alert alert-warning bg-warning text-light border-0 alert-dismissible fade show" role="alert">
-                Warning, PP dropping low.
+                Warning, PP dropping low.</a>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div></a>';
+              </div>';
               }
               // echo $pp_total;
             } else if ($pp_total <= 1) {
               echo '<a href="inventory-rawmaterials.php"><div class="alert alert-danger bg-danger text-light border-0 alert-dismissible fade show" role="alert">
-                Critical, PP is Empty, Please add new stock
+                Critical, PP is Empty, Please add new stock</a>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div></a>';
+              </div>';
             }
             ?>
 
