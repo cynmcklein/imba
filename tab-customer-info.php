@@ -104,7 +104,7 @@ require_once 'includes/load.php';
       <div class="card-body">
         <h5 class="card-title">Customer Overview <span>| Today</span></h5>
 
-        <table id="table" class="table table-borderless datatable">
+        <table id="table" class="data-show-print">
 
           <thead>
             <tr>

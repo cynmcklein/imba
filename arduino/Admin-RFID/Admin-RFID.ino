@@ -37,8 +37,8 @@ MFRC522 mfrc522(SS_PIN, RST_PIN);  //--> Create MFRC522 instance.
 #define ON_Board_LED 2  //--> Defining an On Board LED, used for indicators when the process of connecting to a wifi router
 
 //----------------------------------------SSID and Password of your WiFi router-------------------------------------------------------------------------------------------------------------//
-const char* ssid = "PLDTHOMEFIBRFaS9k";
-const char* password = "JjJualo2022";
+const char* ssid = "ZTE_2.4G_He5aqC";
+const char* password = "November2021";
 //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
 
 ESP8266WebServer server(80);  //--> Server on port 80
@@ -100,7 +100,7 @@ void loop() {
     //Post Data
     postData = "UIDresult=" + UIDresultSend;
 
-    http.begin("http://192.168.1.2/IMBA/getUID.php");  //Specify request destination
+    http.begin("http://192.168.1.15/IMBA/getUID.php");  //Specify request destination
     //http.begin("http://imba.epizy.com/getUID.php");  //Specify request destination
     http.addHeader("Content-Type", "application/x-www-form-urlencoded"); //Specify content-type header
 
