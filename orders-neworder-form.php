@@ -1,7 +1,21 @@
 <?php require_once 'header-sidebar.php'; ?>
 
 <main id="main" class="main">
-  <h1>Product Details</h1>
+
+  <div class="pagetitle">
+    <h1>Product Details</h1>
+    <nav>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="home.php">Dashboard</a></li>
+
+        <li class="breadcrumb-item active"><a href="orders-neworder.php">Customer Form</a></li>
+
+        <li class="breadcrumb-item active"><a href="orders-neworder-form.php">Product Details</a></li>
+
+      </ol>
+    </nav>
+  </div><!-- End Page Title -->
+
 
   <?php require_once 'orders-neworder-form-process.php'; ?>
   <form action="orders-neworder-form-process.php" method="POST" class="row g-3">

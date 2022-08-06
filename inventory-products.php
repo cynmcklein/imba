@@ -3,19 +3,18 @@ require_once 'includes/load.php'; ?>
 
 <main id="main" class="main">
 
-  <h1>Inventory Products</h1>
-
-
   <div class="pagetitle">
-
+    <h1>Products</h1>
     <nav>
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-        <li class="breadcrumb-item"><a href="inventory-products.php">Inventory</a></li>
+        <li class="breadcrumb-item"><a href="home.php">Dashboard</a></li>
+
+        <li class="breadcrumb-item active"><a href="inventory-products.php">Products List</a></li>
 
       </ol>
     </nav>
-  </div>
+  </div><!-- End Page Title -->
+
 
   <div class="col-md-12">
     <?php echo display_msg($msg); ?>
@@ -30,6 +29,7 @@ require_once 'includes/load.php'; ?>
 
           <div class="d-grid gap-2 d-md-flex justify-content-md-end">
             <a href="inventory-products-add.php"><button type="button" class="btn btn-success">Add New Product</button></a>
+            <a href="print-products.php"><button type="button" style="color: white;" class="btn btn-info">Print Report</button></a>
 
           </div>
 

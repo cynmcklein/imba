@@ -1,5 +1,6 @@
 <?php
 
+require_once('includes/load.php');
 include("conndb.php");
 
 
@@ -11,7 +12,7 @@ $query = "DELETE FROM customer WHERE id=$id";
 
 $data = mysqli_query($data, $query);
 
-
+$session->msg('i', "Item Deleted! ");
 header("Location: tab-customer-info.php");
 
 

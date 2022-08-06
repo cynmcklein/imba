@@ -1,17 +1,18 @@
 <?php require_once 'header-sidebar.php' ?>
 
 <main id="main" class="main">
-  <h1>Inventory Components</h1>
   <div class="pagetitle">
-
+    <h1>Components</h1>
     <nav>
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-        <li class="breadcrumb-item active"><a href="inventory-components.php">Inventory</a></li>
+        <li class="breadcrumb-item"><a href="home.php">Dashboard</a></li>
+
+        <li class="breadcrumb-item active"><a href="inventory-components.php">Components List</a></li>
 
       </ol>
     </nav>
-  </div>
+  </div><!-- End Page Title -->
+
   <section class="section">
     <div class="row">
       <div class="">
@@ -22,7 +23,7 @@
 
           <div class="d-grid gap-2 d-md-flex justify-content-md-end">
             <a href="inventory-components-add.php"><button type="button" class="btn btn-success">Add New Component</button></a>
-
+            <a href="print-components.php"><button type="button" style="color: white;" class="btn btn-info">Print Report</button></a>
           </div>
 
 

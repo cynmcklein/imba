@@ -6,7 +6,19 @@ require_once 'includes/load.php';
 
 <main id="main" class="main">
 
-  <h1>Manage RFID</h1>
+  <div class="pagetitle">
+    <h1>Registered RFID</h1>
+    <nav>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="home.php">Dashboard</a></li>
+
+        <li class="breadcrumb-item active"><a href="manage-rfid.php">Registered Items</a></li>
+
+      </ol>
+    </nav>
+  </div><!-- End Page Title -->
+
+
   <div class="col-md-12">
     <?php echo display_msg($msg); ?>
   </div>
@@ -71,7 +83,7 @@ require_once 'includes/load.php';
 
 
                   <a href="edit-customer.php?edit=<?php echo $row['id']; ?>"><button class="btn btn-success ri-contacts-fill" type="button" data-toggle="tooltip" data-placement="top" title="Edit"></button></a>
-                  <a href='process-delete.php?delete=<?php echo $row['id']; ?>'><button class="btn btn-danger ri-delete-bin-6-line" name="btnDelete" type="button" data-toggle="tooltip" data-placement="top" title="Delete"></button></a>
+                  <a href='delete-rfid.php?delete=<?php echo $row['id']; ?>'><button class="btn btn-danger ri-delete-bin-6-line" name="btnDelete" type="button" data-toggle="tooltip" data-placement="top" title="Delete"></button></a>
 
 
 

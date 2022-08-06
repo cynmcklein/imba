@@ -1,5 +1,6 @@
  <?php
     include_once 'conndb.php';
+    include_once('includes/load.php');
     $id = $_GET['edit'];
 
 
@@ -17,7 +18,7 @@
         $data->query($sql) or die($data->error);
 
 
-
+        $session->msg('s', "Edit Success! ");
         header("Location: tab-customer-info.php?edit=" . $id);
     }
 

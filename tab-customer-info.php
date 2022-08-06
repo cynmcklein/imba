@@ -7,18 +7,18 @@ require_once 'includes/load.php';
 <main id="main" class="main">
 
   <div class="pagetitle">
-    <h1>Dashboard</h1>
+    <h1>Customer Information</h1>
     <nav>
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="home.php">Home</a></li>
+        <li class="breadcrumb-item"><a href="home.php">Dashboard</a></li>
 
-        <li class="breadcrumb-item active">Dashboard</li>
+        <li class="breadcrumb-item active"><a href="tab-customer-info.php">Add Customer</a></li>
 
       </ol>
     </nav>
   </div><!-- End Page Title -->
 
-  <h1>Customer Information</h1>
+
   <div class="col-md-12">
     <?php echo display_msg($msg); ?>
   </div>
@@ -42,34 +42,34 @@ require_once 'includes/load.php';
           <div class="modal-body">
             <div class="col-md-12">
               <label for="inputName5" class="form-label">Company Name </label>
-              <input type="text" name="companyName" class="form-control" id="companyName">
+              <input type="text" name="companyName" class="form-control" id="companyName" required>
             </div>
             <div class="col-md-6">
               <label for="inputEmail5" class="form-label">Email </label>
-              <input type="email" name="email" class="form-control" id="email">
+              <input type="email" name="email" class="form-control" id="email" required>
             </div>
             <div class="col-md-6">
               <label for="inputPassword5" class="form-label">Contact Number </label>
-              <input type="integer" name="contact" class="form-control" id="contact">
+              <input type="integer" name="contact" class="form-control" id="contact" required>
             </div>
             <div class="col-12">
               <label for="inputAddress5" class="form-label">Contact Person </label>
-              <input type="text" name="conPerson" class="form-control" id="conPerson">
+              <input type="text" name="conPerson" class="form-control" id="conPerson" required>
             </div>
             <div class="col-12">
               <label for="inputAddress2" class="form-label">Address </label>
-              <input type="text" name="address" class="form-control" id="address" placeholder="Apartment, studio, or floor">
+              <input type="text" name="address" class="form-control" id="address" placeholder="Apartment, studio, or floor" required>
             </div>
             <div class="col-12">
               <label for="inputAddress2" class="form-label">Agent Name </label>
-              <input type="text" name="agent" class="form-control" id="address" placeholder="">
+              <input type="text" name="agent" class="form-control" id="address" placeholder="" required>
             </div>
 
 
 
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="submit" name="save" class="btn btn-primary" data-bs-target="#basicmodal">Save changes</button>
+              <button type="submit" name="save" id="save" class="btn btn-primary" data-bs-target="#basicmodal">Save changes</button>
             </div>
 
 

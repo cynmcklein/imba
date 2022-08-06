@@ -1,7 +1,17 @@
 <?php require_once 'header-sidebar.php'; ?>
 
 <main id="main" class="main">
-  <h1>Reorder</h1>
+  <div class="pagetitle">
+    <h1>Reorder Product</h1>
+    <nav>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="home.php">Dashboard</a></li>
+
+        <li class="breadcrumb-item active"><a href="orders-reorder.php">Reorder Form</a></li>
+
+      </ol>
+    </nav>
+  </div><!-- End Page Title -->
 
   <?php require_once 'orders-reorder-process.php'; ?>
   <form action="orders-reorder-process.php" method="POST" class="row g-1">

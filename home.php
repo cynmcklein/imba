@@ -420,7 +420,7 @@ include_once 'header-sidebar.php';
                           }],
                           chart: {
                             type: 'bar',
-                            height: 400
+                            height: 375
                           },
                           plotOptions: {
                             bar: {

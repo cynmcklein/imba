@@ -22,6 +22,6 @@ if (isset($_POST['save'])) {
     echo mysqli_error($mysqli);
   } else {
     $session->msg('s', "Supplier Added! ");
-    require_once 'tab-supplier-info.php';
+    header("Location: tab-supplier-info.php");
   }
 }

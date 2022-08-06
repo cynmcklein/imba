@@ -1,4 +1,5 @@
  <?php
+    require_once('includes/load.php');
     include_once 'conndb.php';
     $id = $_GET['edit'];
 
@@ -16,7 +17,7 @@
         $data->query($sql) or die($data->error);
 
 
-
+        $session->msg('s', "Edit Success! ");
         header("Location: tab-supplier-info.php?edit=" . $id);
     }
 

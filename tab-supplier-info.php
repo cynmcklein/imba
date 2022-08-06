@@ -1,7 +1,23 @@
-<?php require_once 'header-sidebar.php'; ?>
+<?php
+require_once 'includes/load.php';
+require_once 'header-sidebar.php'; ?>
 
 <main id="main" class="main">
-  <h1 text>Supplier Information</h1>
+
+  <div class="pagetitle">
+    <h1>Supplier Information</h1>
+    <nav>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="home.php">Dashboard</a></li>
+
+        <li class="breadcrumb-item active"><a href="tab-supplier-info.php">Add Supplier</a></li>
+
+      </ol>
+    </nav>
+  </div><!-- End Page Title -->
+
+
+
   <div class="col-md-12">
     <?php echo display_msg($msg); ?>
   </div>
@@ -22,20 +38,20 @@
           <div class="modal-body">
             <div class="col-md-12">
               <label for="inputName5" class="form-label">Company Name </label>
-              <input type="text" name="companyName" class="form-control" id="companyName">
+              <input type="text" name="companyName" class="form-control" id="companyName" required>
             </div>
             <div class="col-md-6">
               <label for="inputEmail5" class="form-label">Email </label>
-              <input type="email" name="email" class="form-control" id="email">
+              <input type="email" name="email" class="form-control" id="email" required>
             </div>
             <div class="col-md-6">
               <label for="inputPassword5" class="form-label">Contact Number </label>
-              <input type="integer" name="contact" class="form-control" id="contact">
+              <input type="integer" name="contact" class="form-control" id="contact" required>
             </div>
 
             <div class="col-12">
               <label for="inputAddress2" class="form-label">Address </label>
-              <input type="text" name="address" class="form-control" id="address" placeholder="Apartment, studio, or floor">
+              <input type="text" name="address" class="form-control" id="address" placeholder="Apartment, studio, or floor" required>
             </div>
             <div class="text-center">
               <button type="submit" class="btn btn-primary" name="save" data-bs-target="#basicmodal">Submit</button>

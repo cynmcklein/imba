@@ -2,6 +2,20 @@
 require_once('includes/load.php'); ?>
 
 <main id="main" class="main">
+
+  <div class="pagetitle">
+    <h1>Customer New Order</h1>
+    <nav>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="home.php">Dashboard</a></li>
+
+        <li class="breadcrumb-item active"><a href="orders-neworder.php">Customer Form</a></li>
+
+      </ol>
+    </nav>
+  </div><!-- End Page Title -->
+
+
   <div class="card">
     <div class="card-body">
       <h5 class="card-title">Customer Information</h5>
