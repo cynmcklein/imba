@@ -1,4 +1,7 @@
 <?php
+
+include_once 'includes/load.php';
+
 $host = "localhost";
 $user = "root";
 $password = "";
@@ -18,7 +21,8 @@ if (isset($_POST['submit'])) {
     if (!$insert) {
         echo mysqli_error($mysqli);
     } else {
-        require_once 'orders-reorder.php';
+        $session->msg('s', "Order Added! ");
+        header("Location: orders-history.php");
     }
 }
 

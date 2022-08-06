@@ -3,7 +3,23 @@ require_once 'includes/load.php';
 ?>
 
 <main id="main" class="main">
-    <h1>Order History</h1>
+    <div class="pagetitle">
+        <h1>Orders History</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="home.php">Dashboard</a></li>
+
+                <li class="breadcrumb-item active"><a href="orders-history.php">Orders History</a></li>
+
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+
+
+    <div class="col-md-12">
+        <?php echo display_msg($msg); ?>
+    </div>
 
     <div class="card">
         <div class="card-body">
@@ -17,7 +33,7 @@ require_once 'includes/load.php';
                         <th scope="col">Plastic Type</th>
                         <th scope="col">Number of Colors</th>
                         <th scope="col">Quantity</th>
-                        <th scope="col">Customer</th>
+                        <!-- <th scope="col">Customer</th> -->
 
                         <th scope="col">Date</th>
                         <th scope="col">Action</th>
@@ -47,7 +63,8 @@ require_once 'includes/load.php';
                             <td><?php echo $row['qty']; ?></td>
 
 
-                            <td><?php echo $row['customer_id']; ?></td>
+                            <!-- <td><?php //echo $row['customer_id']; 
+                                        ?></td> -->
 
                             <td><?php echo $row['Date']; ?></td>
 

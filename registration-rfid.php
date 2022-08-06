@@ -25,6 +25,9 @@ require_once 'includes/load.php';
         <div class="center">
           <div class="card-title">
             <h3 align="center">Please Scan RFID</h3>
+            <div class="col-md-12">
+              <?php echo display_msg($msg); ?>
+            </div>
           </div>
           <br>
           <form action="insertDB.php" method="post">

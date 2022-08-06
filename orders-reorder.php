@@ -79,7 +79,7 @@
       </div>
 
       <div class="text-center">
-        <button type="submit" class="btn btn-primary">Add Data</button>
+        <button type="submit" name="submit" class="btn btn-primary">Add Data</button>
         <button type="reset" class="btn btn-secondary">Reset</button>
       </div>
   </form>

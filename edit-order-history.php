@@ -40,6 +40,20 @@
      <body>
          <main id="main" class="main">
 
+             <div class="pagetitle">
+                 <h1>Edit Order History Data</h1>
+                 <nav>
+                     <ol class="breadcrumb">
+                         <li class="breadcrumb-item"><a href="home.php">Dashboard</a></li>
+
+                         <li class="breadcrumb-item active"><a href="orders-history.php">Orders history</a></li>
+
+                         <li class="breadcrumb-item active"><a href="edit-order-history.php">Edit Data</a></li>
+
+                     </ol>
+                 </nav>
+             </div><!-- End Page Title -->
+
 
 
              <form action="" method="POST">
